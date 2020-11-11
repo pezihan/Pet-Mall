@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>店内项目</title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		/* y右侧信息导航 */
+		#fixedField{width: 40px;height: 100%;background-color: #444444;position: fixed;z-index: 100;right: 0;}
+		#fixedField img{width: 28px;}
+		#fixedField>a{color: #DF8225; width: 20px;height: 100px;display: block;margin-top: 20px;margin-left: 10px;list-style-type: none;text-decoration:none}
+		.fixedField_1{cursor: default;width: 40px;font-size: 14px;font-weight: 200; height: 100px;text-align: center;background-color: #444444;color: aliceblue;  position: relative; top: 55px;margin-bottom: 50px;padding-top: 18px;}
+		.fixedField_1>div{cursor: default;color: #FFFFFF;font-size: 14px;  position: absolute;width: 150px;height: 35px;line-height: 35px; background-color: #444444;border-radius: 3%; vertical-align: middle;top: 40px; left: -150px;display: none;}
+		.fixedField_1>div>a{color: #DF8225;cursor: default}
+		.fixedField_1:hover{background-color: #7a7a7a;}
+		/* 导航栏 */
+		#div1 {
+			position: absolute;
+			width: 1520px;
+			height: 5px;
+			top: 0px;
+		}
+
+		#div1 table {
+			position: absolute;
+			border-collapse: collapse;
+			top: 22px;
+			font-size: 14px;
+			left: 600px;
+			color: aliceblue;
+		}
+
+		#div1 table tr th {
+			padding: 5px;
+			cursor: default;
+		}
+
+		#div1 img {
+			position: absolute;
+			left: 510px;
+			top: 12px;
+		}
+
+		#div1 table tr img {
+			position: relative;
+			left: 15px;
+			top: 0px;
+		}
+
+		#div1 table tr th img {
+			position: absolute;
+			top: 28px;
+			display: none;
+		}
+
+		#div2 {
+			width: 1520px;
+			height: 400px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		#div2 img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.ah2 {
+			margin: 40px;
+			text-align: center;
+			font-size: 35px;
+		}
+
+		#div3 {
+			width: 1000px;
+			margin: 10px auto;
+		}
+
+		#div3-1 {
+			width: 70px;
+			height: 500px;
+			float: left;
+		}
+
+		#div3-1 div {
+			width: 70px;
+			background-color: #E3DFDE;
+			margin-bottom: 5px;
+			height: 60px;
+			text-align: center;
+			font-weight: 700;
+			color: #FFFFFF;
+			line-height: 28px;
+		}
+		.banners{
+			float: left;
+			width: 928px;
+			height: 600px;
+			display: none;
+		}
+		.banners-1>img{
+			width: 480px;
+			height: 370px;
+			float: left;
+		}
+		.banners-1>div{
+			position: relative;
+			height: 370px;
+			width: 420px;
+			float: right;
+		}
+		.banners-1>div img{
+			width: 380px;
+			height: 260px;
+			position: absolute;
+			bottom: 0px;
+		}
+		.banners-1>div h3{
+			margin-bottom: 8px;
+		}
+		.banners-1>div h2{
+			color: #FECB02;
+			font-size: 30px;
+			font-weight: 400;
+		}
+		.banners-2{
+			width:928px;
+			margin-top: 10px;
+		}
+		.banners-2>div{
+			float: left;
+			margin-top: 10px;
+			margin-right: 10px;
+			width: 296px;
+			height: 200px;
+			overflow: hidden;
+		}
+		.banners-2>div img{
+			width: 100%;
+			height: 100%;
+		}
+		.banners-2>div img:hover{
+			transform: scale(1.1);  transition:  1s ;
+		}
+		
+		/* 末尾版权 */
+		#div7{width: 1520px;height: 300px;background-color: #333333;}
+		#div7-1{background-color: #333333;width: 100%;height:260px ;margin-top: 750px;}/* 修改版权栏距离内容距离 */
+		#div7-2{background-color: #292929;width: 100%;height: 40px; color: #FFFFFF;font-size: 13px;text-align: center;line-height: 40px;}
+		#div7-1-1{margin: 0px auto;margin-left: 660px; width: 400px;color: #999999; font-size: 14px;text-align: left;padding:15px ;}
+		#div7-1-1 p{padding: 10px;}
+		#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18px;width: 110px;height: 37px;border-radius: 30px;}
+	</style>
+	<script src="js/jQuery-3.4.1.js"></script>
+	<script>
+		$(function() {
+			//导航栏
+			$("#th1 th").mouseover(function() {
+				$("#th1 th img").css("display", "none");
+				$("#th1 th img:eq(2)").css("display", "block");
+				$("#th1 th img").eq($("#th1 th").index(this)).css("display", "block");
+			});
+			$("#th1 th").mouseout(function() {
+				$("#th1 th img").css("display", "none");
+				$("#th1 th img:eq(2)").css("display", "block");
+			});
+			$("#th1 th").click(function() {
+				var iNdexs = $("#th1 th").index(this);
+				if (iNdexs == 0) {
+					location.assign("index.html");
+				} else if (iNdexs == 1) {
+					location.assign("关于店铺.html");
+				} else if (iNdexs == 3) {
+					location.assign("附近门店.html");
+				} else if (iNdexs == 4) {
+					location.assign("宠物医院.html");
+				} else if (iNdexs == 5) {
+					location.assign("宠物商城.html");
+				} else if (iNdexs == 6) {
+					location.assign("萌宠学堂.html");
+				}
+			});
+			
+			//店内项目自动轮播以及鼠标移入
+			var that = 1;
+			var timer = null;//启动定时器自动切换项目
+			Tab();
+			$("#div3-1 div").css("background-color","#E3DFDE").eq(0).css("background-color","#FECB02");//左侧滑动栏
+			$("#div3-1 div").mouseover(function(){
+				clearInterval(timer);
+				that = $(this).index();
+				$("#div3-1 div").css("background-color","#E3DFDE");
+				$(this).css("background-color","#FECB02");
+				
+				$(".banners").hide().eq(that).fadeIn();
+			})
+			$("#div3-1 div").mouseleave(function(){
+				that=that+1;
+				Tab();
+			})
+			$(".banners").mouseover(function(){
+				clearInterval(timer);
+			}).mouseleave(function(){
+				Tab();
+			})
+			
+			function Tab(){
+				clearInterval(timer);
+				timer = setInterval(function(){
+					$("#div3-1 div").css("background-color","#E3DFDE");
+					$("#div3-1 div").eq(that).css("background-color","#FECB02");
+					$(".banners").hide().eq(that).fadeIn();
+					if(that>=6){
+						that=0;
+					}else{
+						that++;
+					}
+				},3000);
+			}
+		})
+	</script>
+	<body>
+		<!-- 右侧固定个人信息导航栏 -->
+		<div id="fixedField">
+			<a href="/login" style="width: 10px; ">点击登录</a>
+			<div class="fixedField_1"><img src="images/icon_1.png">购物车
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1"><img src="images/icon_2.png">在线客服
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1"><img src="images/icon_3.png">我的订单
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1">
+				<img src="images/icon_up.png">
+				<div id="topUp" style="width: 80px; height: 40px; top: 20px;left: -80px;background-color: #FFD70A;line-height: 40px;"><a
+					 href="#" style="color: #FFFFFF;">返回顶层</a></div>
+			</div>
+		</div>
+		<div id="div2">
+			<img src="./images/店内项目/u479.jpg" />
+		</div>
+		<!-- 导航栏 -->
+		<div id="div1">
+			<table>
+				<img src="images/logo_u49.png" style="width: 80px; height: 40px;" />
+				<tr id="th1">
+					<th>网站首页<img src="./images/index4.png"/ style=""></th>
+					<th>关于店铺<img src="./images/index4.png"/ style="left: 82px;"></th>
+					<th>店内项目<img src="./images/index4.png"/ style="left: 148px;display: block;"></th>
+					<th>附近门店<img src="./images/index4.png"/ style="left: 214px;"></th>
+					<th>宠物医院<img src="./images/index4.png"/ style="left: 282px;"></th>
+					<th>宠物商城<img src="./images/index4.png"/ style="left: 348px;"></th>
+					<th>萌宠学堂<img src="./images/index4.png"/ style="left: 414px;"></th>
+				</tr>
+			</table>
+		</div>
+		<h2 class="ah2">店内项目</h2>
+		<div id="div3">
+			<div id="div3-1">
+				<div>宠物<br />用品</div>
+				<div>宠物<br />美容</div>
+				<div>宠物<br />摄影</div>
+				<div>宠物<br />训练</div>
+				<div>宠物<br />乐园</div>
+				<div>宠物<br />spa</div>
+				<div>宠物<br />游泳</div>
+			</div>
+			<div id="div3-2" class="banners" style="display: block;" onclick="location.assign('宠物商城.html')">
+				<div class="banners-1">
+					<img src="images/店内项目/u556.jpg">
+					<div>
+						<h3>宠物用品</h3>
+						<p>现在的宠物用品从宠物粮食、宠物玩具、宠物香波，到宠物宠物服饰，零食等应有尽有。</p>
+						<h2>点击直达</h2>
+						<img src="images/店内项目/u564.png" />
+					</div>
+				</div>
+				<div class="banners-2">
+					<div><img src="images/店内项目/u558.png"></div>
+					<div><img src="images/店内项目/u560.png"></div>
+					<div style="margin-right: 0px;"><img src="images/店内项目/u562.png"></div>
+				</div>
+			</div>
+			<div id="div3-3" class="banners" onclick="location.assign('店内项目/宠物美容.html')">
+				<div class="banners-1">
+					<img src="images/店内项目/u598.png">
+					<div>
+						<h3>宠物美容</h3>
+						<p>利用宠物美容技术，修剪出适合狗狗并让宠物主人满意的造型，充分的展现狗狗可爱和美丽的一面，让主人们以自己的宠物为“骄傲”。</p>
+						<h2>点击预约</h2>
+						<img src="images/店内项目/u590.png" />
+					</div>
+				</div>
+				<div class="banners-2">
+					<div><img src="images/店内项目/u600.png"></div>
+					<div><img src="images/店内项目/u602.png"></div>
+					<div><img src="images/店内项目/u604.png"></div>
+				</div>
+			</div>
+			<div id="div3-4" class="banners" onclick="location.assign('店内项目/宠物摄影.html')">
+				<div class="banners-1">
+					<img src="images/店内项目/u632.png">
+					<div>
+						<h3>宠物摄影</h3>
+						<p>捕捉宠物在生活中的精彩定格，定格画面，留住感动。</p>
+						<h2>点击预约</h2>
+						<img src="images/店内项目/u624.png" />
+					</div>
+				</div>
+				<div class="banners-2">
+					<div><img src="images/店内项目/u634.png"></div>
+					<div><img src="images/店内项目/u636.png"></div>
+					<div><img src="images/店内项目/u638.png"></div>
+				</div>
+			</div>
+			<div id="div3-5" class="banners" onclick="location.assign('店内项目/宠物训练.html')">
+				<div class="banners-1">
+					<img src="images/店内项目/u666.png">
+					<div>
+						<h3>宠物训练</h3>
+						<p>宠物如果不训练好就会有很多的坏毛病和坏习惯，会给它的主人带来一些不必要的麻烦，通过合理训练培养宠物良好习惯。</p>
+						<h2>点击预约</h2>
+						<img src="images/店内项目/u658.jpg" />
+					</div>
+				</div>
+				<div class="banners-2">
+					<div><img src="images/店内项目/u668.png"></div>
+					<div><img src="images/店内项目/u670.png"></div>
+					<div><img src="images/店内项目/u672.png"></div>
+				</div>
+			</div>
+			<div id="div3-6" class="banners" onclick="location.assign('店内项目/宠物乐园.html')">
+				<div class="banners-1">
+					<img src="images/店内项目/u700.png">
+					<div>
+						<h3>宠物乐园</h3>
+						<p>在这里，宠物们不仅可以尽情“撒欢”，还可以享受各种设施带来的“专业训练”。</p>
+						<h2>点击预约</h2>
+						<img src="images/店内项目/u692.png" />
+					</div>
+				</div>
+				<div class="banners-2">
+					<div><img src="images/店内项目/u702.png"></div>
+					<div><img src="images/店内项目/u704.png"></div>
+					<div><img src="images/店内项目/u706.png"></div>
+				</div>
+			</div>
+			<div id="div3-7" class="banners" onclick="location.assign('店内项目/宠物spa.html')">
+				<div class="banners-1">
+					<img src="images/店内项目/u734.png">
+					<div>
+						<h3>宠物spa</h3>
+						<p>洗澡也有许多需要注意的事项，宠掌门对于加盟商会有专业的培训，让加盟商全面的掌握狗狗洗澡的流程及注意事项。</p>
+						<h2>点击预约</h2>
+						<img src="images/店内项目/u726.jpg" />
+					</div>
+				</div>
+				<div class="banners-2">
+					<div><img src="images/店内项目/u736.png"></div>
+					<div><img src="images/店内项目/u738.png"></div>
+					<div><img src="images/店内项目/u740.png"></div>
+				</div>
+			</div>
+			<div id="div3-8" class="banners" onclick="location.assign('店内项目/宠物游泳.html')">
+				<div class="banners-1">
+					<img src="images/店内项目/u768.jpg">
+					<div>
+						<h3>宠物游泳</h3>
+						<p>狗狗都有爱游泳的天性，在宠掌门可以打破季节和条件的限制，尽情游泳。主人还可以同宠物一同戏水，乐趣无穷。</p>
+						<h2>点击预约</h2>
+						<img src="images/店内项目/u760.png" />
+					</div>
+				</div>
+				<div class="banners-2">
+					<div><img src="images/店内项目/u770.png"></div>
+					<div><img src="images/店内项目/u772.png"></div>
+					<div><img src="images/店内项目/u774.png"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- 末尾版权 -->
+		<div id="div7">
+			<div id="div7-1">
+				<div id="div7-1-1">
+					<p>客服热线</p>
+					<div><img src="images/u209.png" style="width: 25px;padding: 5px;" />
+						<h2 style="float: right;margin-right: 220px;">400-888-888</h2>
+					</div>
+					<p>周一至周日 09:00-22:00</p>
+					<p>地址：长沙市雨花区</p>
+					<p>邮箱：888888888@qq.com</p>
+					<input type="button" value="在线咨询" />
+				</div>
+			</div>
+			<div id="div7-2">版权所有：@INpasdsadasdasd</div>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			//右侧信息导航栏
+			$(".fixedField_1").mouseout(function(){
+				$(this).children("div").hide();
+			})
+				$(".fixedField_1").eq(0).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") == 0){
+						location.assign('/shopping');
+					}else{
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				$(".fixedField_1").eq(1).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") != 0){
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				$(".fixedField_1").eq(2).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") == 0){
+						location.assign('/Allorders');
+					}else{
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				
+				$(".fixedField_1").eq(3).mouseover(function(){
+					$(this).children("div").show().mouseout(function(){//children获取当前元素下的自定义子代元素
+						$(this).hide();
+					});
+				}).mouseout(function(){
+						$(this).children("div").hide();
+					});
+				//右侧信息导航栏点击返回最上面
+				$("#topUp").click(function(){
+					$("html,body").animate({scrollTop:0},500);
+				});
+			$.ajax({
+				type:"post",
+				url:"/condition",
+				dataType:"json",
+				success:function(data,statusText,xhr){
+					if(data.success == 0){
+						$("#fixedField>a").html("已登录");
+						$("#fixedField").attr("login",0)
+					}else{
+						$("#fixedField>a").html("点击登录");
+					}
+				},
+				error:function(err){
+						console.log(err);
+						alert("错误")
+					}
+				})
+		})
+	</script>
+</html>

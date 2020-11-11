@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>附近门店</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			/* y右侧信息导航 */
+			#fixedField{width: 40px;height: 100%;background-color: #444444;position: fixed;z-index: 100;right: 0;}
+			#fixedField img{width: 28px;}
+			#fixedField>a{color: #DF8225; width: 20px;height: 100px;display: block;margin-top: 20px;margin-left: 10px;list-style-type: none;text-decoration:none}
+			.fixedField_1{cursor: default;width: 40px;font-size: 14px;font-weight: 200; height: 100px;text-align: center;background-color: #444444;color: aliceblue;  position: relative; top: 55px;margin-bottom: 50px;padding-top: 18px;}
+			.fixedField_1>div{cursor: default;color: #FFFFFF;font-size: 14px;  position: absolute;width: 150px;height: 35px;line-height: 35px; background-color: #444444;border-radius: 3%; vertical-align: middle;top: 40px; left: -150px;display: none;}
+			.fixedField_1>div>a{color: #DF8225;cursor: default}
+			.fixedField_1:hover{background-color: #7a7a7a;}
+			
+			/* 导航栏 */
+			#div1 {
+				position: absolute;
+				width: 1520px;
+				height: 5px;
+				top: 0px;
+			}
+			
+			#div1 table {
+				position: absolute;
+				border-collapse: collapse;
+				top: 22px;
+				font-size: 14px;
+				left: 600px;
+				color: aliceblue;
+			}
+			
+			#div1 table tr th {
+				padding: 5px;
+				cursor: default;
+			}
+			
+			#div1 img {
+				position: absolute;
+				left: 510px;
+				top: 12px;
+			}
+			
+			#div1 table tr img {
+				position: relative;
+				left: 15px;
+				top: 0px;
+			}
+			
+			#div1 table tr th img {
+				position: absolute;
+				top: 28px;
+				display: none;
+			}
+			#div2 {
+				width: 1520px;
+				height: 400px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#div2 img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.ah2 {
+				margin: 30px;
+				text-align: center;
+				font-size: 35px;
+			}
+			.str1{
+				text-align: center;
+				font-size: 22px;
+				line-height: 40px;
+			}
+			#div3{
+				width: 1200px;
+				margin: 20px;
+				height:300px;
+				margin-left: 200px;
+			}
+			.aImgs{
+				width: 1200px;
+			}
+			.aImgs div{
+				width: 240px;
+				float: left;
+				margin: 20px;
+				height: 200px;
+			}
+			.aImgs img{
+				width: 100%;
+				height: 180px;
+				border-radius: 5px;
+			}
+			.aImgs img:hover{
+				height: 170px;
+				transition: 0.5s;
+			}
+			
+			/* 末尾版权 */
+			#div7{width: 1520px;height: 300px;background-color: #333333;}
+			#div7-1{background-color: #333333;width: 100%;height:260px ;margin-top: 750px;}/* 修改版权栏距离内容距离 */
+			#div7-2{background-color: #292929;width: 100%;height: 40px; color: #FFFFFF;font-size: 13px;text-align: center;line-height: 40px;}
+			#div7-1-1{margin: 0px auto;margin-left: 660px; width: 400px;color: #999999; font-size: 14px;text-align: left;padding:15px ;}
+			#div7-1-1 p{padding: 10px;}
+			#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18px;width: 110px;height: 37px;border-radius: 30px;}
+		</style>
+		<script src="js/jQuery-3.4.1.js"></script>
+		<script>
+			$(function(){
+				//导航栏
+				$("#th1 th").mouseover(function() {
+					$("#th1 th img").css("display", "none");
+					$("#th1 th img:eq(3)").css("display", "block");
+					$("#th1 th img").eq($("#th1 th").index(this)).css("display", "block");
+				});
+				$("#th1 th").mouseout(function() {
+					$("#th1 th img").css("display", "none");
+					$("#th1 th img:eq(3)").css("display", "block");
+				});
+				$("#th1 th").click(function() {
+					var iNdexs = $("#th1 th").index(this);
+					if (iNdexs == 0) {
+						location.assign("index.html");
+					} else if (iNdexs == 1) {
+						location.assign("关于店铺.html");
+					} else if (iNdexs == 4) {
+						location.assign("宠物医院.html");
+					} else if (iNdexs == 2) {
+						location.assign("店内项目.html");
+					} else if (iNdexs == 5) {
+						location.assign("宠物商城.html");
+					} else if (iNdexs == 6) {
+						location.assign("萌宠学堂.html");
+					}
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<!-- 右侧固定个人信息导航栏 -->
+		<div id="fixedField">
+			<a href="/login" style="width: 10px; ">点击登录</a>
+			<div class="fixedField_1"><img src="images/icon_1.png">购物车
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1"><img src="images/icon_2.png">在线客服
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1"><img src="images/icon_3.png">我的订单
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1">
+				<img src="images/icon_up.png">
+				<div id="topUp" style="width: 80px; height: 40px; top: 20px;left: -80px;background-color: #FFD70A;line-height: 40px;"><a
+					 href="#" style="color: #FFFFFF;">返回顶层</a></div>
+			</div>
+		</div>
+		<div id="div2">
+			<img src="./images/宠物医院/shop-banner.jpg" />
+		</div>
+		<!-- 导航栏 -->
+		<div id="div1">
+			<table>
+				<img src="images/logo_u49.png" style="width: 80px; height: 40px;" />
+				<tr id="th1">
+					<th>网站首页<img src="./images/index4.png"/ style=""></th>
+					<th>关于店铺<img src="./images/index4.png"/ style="left: 82px;"></th>
+					<th>店内项目<img src="./images/index4.png"/ style="left: 148px;"></th>
+					<th>附近门店<img src="./images/index4.png"/ style="left: 214px;display: block;"></th>
+					<th>宠物医院<img src="./images/index4.png"/ style="left: 282px;"></th>
+					<th>宠物商城<img src="./images/index4.png"/ style="left: 348px;"></th>
+					<th>萌宠学堂<img src="./images/index4.png"/ style="left: 414px;"></th>
+				</tr>
+			</table>
+		</div>
+		<h2 class="ah2">附近门店</h2>
+		<p class="str1">长沙市多家门店，让您宠物更加方便的找到我们，我们将全力为您的爱宠服务<br/>线上线下双预约服务更加便捷</p>
+		<div id="div3">
+			<div class="aImgs">
+				<div>
+					<img src="images/附近门店/1.png"/>
+					<p>长沙市芙蓉区王府花园路131号</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2853.png"/>
+					<p>步步高梅溪新天地萌宠街-梅西百货G层P11停车场入口处</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2855.png"/>
+					<p>湖南省长沙市雨花区砂子塘街道韶山中路713号</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2857.png"/>
+					<p>长沙市芙蓉区王府花园路231号</p>
+				</div>
+			</div>
+			<div class="aImgs">
+				<div>
+					<img src="images/附近门店/u2861.png"/>
+					<p>湖南省长沙市开福区浏阳河街道珠江花城-花盛4栋112门面猧</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2859.png"/>
+					<p>湖南省 长沙市 开福区黄兴北路复地崑玉国际6栋115</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2863.png"/>
+					<p>湖南省 长沙市开福区恒大雅苑八栋113门面</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2865.png"/>
+					<p>湖南省长沙市芙蓉区马王堆街道104号铺</p>
+				</div>
+			</div>
+			<div class="aImgs">
+				<div>
+					<img src="images/附近门店/u2867.png"/>
+					<p> 湖南省 长沙市 雨花区 洞井街道欧莱雅郡S3栋113号一犬一舍</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2869.png"/>
+					<p>湖南省 长沙市 天心区 先锋街道 中信文化广场第15栋12楼</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2871.png"/>
+					<p>湖南省 长沙市 岳麓区 梅溪湖街道梅溪湖达美美立方负119门面</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2873.png"/>
+					<p> 湖南省 长沙市 芙蓉区 湘湖街道车站北路雍景园十栋105号</p>
+				</div>
+			</div>
+			<div class="aImgs">
+				<div>
+					<img src="images/附近门店/u2875.png"/>
+					<p> 湖南省 长沙市 宁乡县 城郊乡东沩南路68号宠来宠趣护理SPA生活馆</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2877.png"/>
+					<p>湖南省 长沙市 芙蓉区 马王堆街道浏阳河畔家园2栋114号</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2879.png"/>
+					<p>湖南省 长沙市 雨花区 车站南路书香名邸北门</p>
+				</div>
+				<div>
+					<img src="images/附近门店/u2881.png"/>
+					<p>湖南省 长沙市 雨花区 雨花亭街道香樟兰亭香樟路门面</p>
+				</div>
+			</div>
+			
+		</div>
+		
+		<!-- 末尾版权 -->
+		<div id="div7">
+			<div id="div7-1">
+				<div id="div7-1-1">
+					<p>客服热线</p>
+					<div><img src="images/u209.png" style="width: 25px;padding: 5px;" />
+						<h2 style="float: right;margin-right: 220px;">400-888-888</h2>
+					</div>
+					<p>周一至周日 09:00-22:00</p>
+					<p>地址：长沙市雨花区</p>
+					<p>邮箱：888888888@qq.com</p>
+					<input type="button" value="在线咨询" />
+				</div>
+			</div>
+			<div id="div7-2">版权所有：@INpasdsadasdasd</div>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			//右侧信息导航栏
+			$(".fixedField_1").mouseout(function(){
+				$(this).children("div").hide();
+			})
+				$(".fixedField_1").eq(0).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") == 0){
+						location.assign('/shopping');
+					}else{
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				$(".fixedField_1").eq(1).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") != 0){
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				$(".fixedField_1").eq(2).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") == 0){
+						location.assign('/Allorders');
+					}else{
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				
+				$(".fixedField_1").eq(3).mouseover(function(){
+					$(this).children("div").show().mouseout(function(){//children获取当前元素下的自定义子代元素
+						$(this).hide();
+					});
+				}).mouseout(function(){
+						$(this).children("div").hide();
+					});
+				//右侧信息导航栏点击返回最上面
+				$("#topUp").click(function(){
+					$("html,body").animate({scrollTop:0},500);
+				});
+			$.ajax({
+				type:"post",
+				url:"/condition",
+				dataType:"json",
+				success:function(data,statusText,xhr){
+					if(data.success == 0){
+						$("#fixedField>a").html("已登录");
+						$("#fixedField").attr("login",0)
+					}else{
+						$("#fixedField>a").html("点击登录");
+					}
+				},
+				error:function(err){
+						console.log(err);
+						alert("错误")
+					}
+				})
+		})
+	</script>
+</html>

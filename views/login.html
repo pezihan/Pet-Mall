@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>登录注册</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			/* 导航栏 */
+			#div1 {
+				position: absolute;
+				width: 1520px;
+				height: 5px;
+				top: 0px;
+			}
+			
+			#div1 table {
+				position: absolute;
+				border-collapse: collapse;
+				top: 22px;
+				font-size: 14px;
+				left: 600px;
+				color: #000000;
+			}
+			
+			#div1 table tr th {
+				padding: 5px;
+				cursor: default;
+			}
+			
+			#div1 img {
+				position: absolute;
+				left: 510px;
+				top: 12px;
+			}
+			
+			#div1 table tr img {
+				position: relative;
+				left: 15px;
+				top: 0px;
+			}
+			
+			#div1 table tr th img {
+				position: absolute;
+				top: 28px;
+				display: none;
+			}
+			#div2 {
+				width: 1520px;
+				overflow: overlay;
+				margin-top: 100px;
+				position: relative;
+			}
+			
+			#div2 img {
+				width: 100%;
+				height: 100%;
+			}
+			#div3{
+				position: absolute;
+				width: 300px;
+				height: 360px;
+				background-color: #FFFFFF;
+				top: 80px;
+				left: 950px;
+			}
+			#div3-1{
+				 width: 300px;
+				 height: 70px;
+				 margin-left: 25px;
+			 }
+			 #div3-1>div{
+				 border-bottom: #B8B8B8 1px solid;
+				 float: left;
+				 width: 120px;
+				 height: 40px;
+				 text-align: center;
+				 line-height: 40px;
+				 margin-top: 20px;
+				 color:#7A7A7A ;
+				 cursor: default;
+			 }
+			 #div3-2{
+				width: 300px;
+				height: 290px;
+			 }
+			 #div3-2>div{
+				 width: 260px;
+				 height: 35px;
+				 margin: 0 auto;
+				 border: #B8B8B8 1px solid;
+				 margin-top: 20px;
+			 }
+			 #div3-2>div img{
+				 width: 18px;
+				 height: 20px;
+				vertical-align: middle;/* 图标垂直居中 */
+				margin-right: 10px;
+				margin-left: 10px;
+			 }
+			 #div3-2>div input{
+			 	height: 30px;
+				width: 200px;
+				color: #7A7A7A;
+				border: none;
+				margin-top: 2px;
+				outline: none;
+			 }
+			 #div3-2>label{
+				 font-size: 12px;
+				 display: inline-block;
+				 margin-top: 20px;
+				 margin-left: 20px;
+			 }
+			 #div3-2>label input{
+				vertical-align: middle;
+				margin-right: 5px;
+			 }
+			 #div3-2>a{
+			 	float: right;
+				margin-right: 20px;
+				margin-top: 20px;
+				color: #7A7A7A;
+				font-size: 14px;
+			 }
+			 #div3-2>button{
+				 border: none;
+				 outline: none;
+				 border-radius: 5px;
+				 width: 260px;
+				 height: 40px;
+				 color: #FFFFFF;
+				 font-weight: 700;
+				 font-size: 18px;
+				 background-color: #33CB98;
+				 margin-top: 10px;
+				 margin-left: 20px;
+			 }
+			  #div3-2>p{
+				  margin-top: 10px;
+				  color: #7A7A7A;
+				  margin-left: 20px;
+			  }
+			  #div3-2>span{
+				  display:block;
+				  margin-top: 10px;
+				  margin-left: 20px;
+			  }
+			   #div3-2>span img{
+				   width: 40px;
+				   height: 35px;
+			   }
+			   
+			   #div3-3{
+			   				width: 300px;
+			   				height: 290px;
+			   }
+			   #div3-3>div{
+			   				 width: 260px;
+			   				 height: 35px;
+			   				 margin: 0 auto;
+			   				 border: #B8B8B8 1px solid;
+			   				 margin-top: 20px;
+			   }
+			   #div3-3>div img{
+			   				 width: 18px;
+			   				 height: 20px;
+			   				vertical-align: middle;/* 图标垂直居中 */
+			   				margin-right: 10px;
+			   				margin-left: 10px;
+			   }
+			   #div3-3>div input{
+			   	height: 30px;
+			   				width: 200px;
+			   				color: #7A7A7A;
+			   				border: none;
+			   				margin-top: 2px;
+			   				outline: none;
+			   }
+			   #div3-3>button{
+			   				 border: none;
+			   				 outline: none;
+			   				 border-radius: 5px;
+			   				 width: 260px;
+			   				 height: 40px;
+			   				 color: #FFFFFF;
+			   				 font-weight: 700;
+			   				 font-size: 18px;
+			   				 background-color: #33CB98;
+			   				 margin-top: 10px;
+			   				 margin-left: 20px;
+			   }
+			   #div3-3-btn{
+				   width: 90px;
+				   height: 35px;
+				   border: 1px solid #33CB98;
+				   border-radius: 10px;
+				   color: #7A7A7A;
+				   font-size: 13px;
+				   background-color: #FFFFFF;
+				   outline: none;/*取消按钮点击效果边框 */
+			   }
+			   
+			/* 末尾版权 */
+			#div7{width: 1520px;height: 300px;background-color: #333333;}
+			#div7-1{background-color: #333333;width: 100%;height:260px ;margin-top: -5px;}/* 修改版权栏距离内容距离 */
+			#div7-2{background-color: #292929;width: 100%;height: 40px; color: #FFFFFF;font-size: 13px;text-align: center;line-height: 40px;}
+			#div7-1-1{margin: 0px auto;margin-left: 660px; width: 400px;color: #999999; font-size: 14px;text-align: left;padding:15px ;}
+			#div7-1-1 p{padding: 10px;}
+			#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18px;width: 110px;height: 37px;border-radius: 30px;}
+		</style>
+		<script src="/public/js/jQuery-3.4.1.js"></script>
+		<script>
+			$(function(){
+				//导航栏
+				$("#th1 th").mouseover(function() {
+					$("#th1 th img").css("display", "none");
+					$("#th1 th img:eq(5)").css("display", "block");
+					$("#th1 th img").eq($("#th1 th").index(this)).css("display", "block");
+				});
+				$("#th1 th").mouseout(function() {
+					$("#th1 th img").css("display", "none");
+					$("#th1 th img:eq(5)").css("display", "block");
+				});
+				$("#th1 th").click(function() {
+					var iNdexs = $("#th1 th").index(this);
+					if (iNdexs == 0) {
+						location.assign("/public/index.html");
+					} else if (iNdexs == 1) {
+						location.assign("/public/关于店铺.html");
+					} else if (iNdexs == 3) {
+						location.assign("/public/附近门店.html");
+					} else if (iNdexs == 2) {
+						location.assign("/public/店内项目.html");
+					} else if (iNdexs == 4) {
+						location.assign("/public/宠物医院.html");
+					} else if (iNdexs == 6) {
+						location.assign("/public/萌宠学堂.html");
+					}
+				});
+				$("#div3-3").hide();
+				$("#div3-1 div").eq(0).css("border-color","#33cb98");
+				$("#div3-1 div").click(function(){
+					var i = $(this).index();
+					$("#div3-1 div").css("border-color","#B8B8B8");
+					$("#div3-2,#div3-3").hide();
+					$(this).css("border-color","#33cb98");
+					$("#div3-2,#div3-3").eq(i).show();
+				});
+				$("#div3-3-btn").mousedown(function(){
+					$(this).css("background-color","#33cb98").mouseup(function(){
+						$(this).css("background-color","#ffffff");
+					});
+				});
+				//登录注册
+				var code = null;
+				$("#div3-3-btn").click(function(){
+					clearInterval(timer);
+					code = numTestCode(4);
+					alert(code);
+					$(this).attr('disabled','disabled');
+					var time = 10;
+					$("#div3-3-btn").val(time + "s后重新发送");
+					var timer = setInterval(function(){
+						if(time > 0){
+							time--;
+							$("#div3-3-btn").val(time + "s后重新发送");
+						}else{
+							clearInterval(timer);
+							$("#div3-3-btn").val("获取验证码");
+							$("#div3-3-btn").attr('disabled',false);
+						}
+					},1000);
+				})
+				$("#div3-3 button").click(function(){
+					var users = {};
+					if($("#div3-3>div input").eq(2).val() != $("#div3-3>div input").eq(3).val()){
+						alert('两次输入密码不正确')
+					}else if($("#div3-3>div input").eq(2).val() == ''){
+						alert('请输入密码');
+					}else if($("#div3-3>div input").eq(3).val() == ''){
+						alert('请再次输入密码');
+					}else if($("#div3-3>div input").eq(0).val() == ''){
+						alert('请输入用户名');
+					}else if($("#div3-3>div input").eq(1).val() == ''){
+						alert('请输入验证码');
+					}else if($("#div3-3>div input").eq(1).val() != code){
+						alert('验证码错误');
+					}else{
+						users = {
+							username:$("#div3-3>div input").eq(0).val(),
+							password:$("#div3-3>div input").eq(2).val()
+						}
+						$.ajax({
+						type:"post",
+						url:"/login",
+						data:users,
+						dataType:"json",
+						success:function(data,statusText,xhr){
+							if(data.success == 500){
+								alert("服务器忙，请稍后重试");
+							}else if(data.success == 1){
+								alert("用户已经被注册");
+							}else if(data.success == 0){
+								alert("注册成功");
+								$("#div3-3").hide();
+								$("#div3-2").show();
+								$("#div3-1 div").eq(0).css("border-color","#33cb98");
+								$("#div3-1 div").eq(1).css("border-color","#B8B8B8");
+								$("#div3-2>div input").eq(0).val(users.username);
+								$("#div3-2>div input").eq(1).val(users.password);
+								users = {};
+							}
+						},
+						error:function(err){
+							console.log(err);
+						}
+					})
+					}
+					
+				})
+
+				function numTestCode(n){//生成数字随机码
+					var arr = [];
+					for(var i = 0;i < n;i++){
+					var num = parseInt(Math.random()*10);
+					arr.push(num);
+				}
+					return arr.join("");
+				}
+
+				//登录
+				$("#div3-2>button").click(function(){
+					if($("#div3-2>div input").eq(0).val() == ''){
+						alert("请输入用户名");
+					}else if($("#div3-2>div input").eq(1).val() == ''){
+						alert("请输入密码")
+					}else{
+						users = {
+							username:$("#div3-2>div input").eq(0).val(),
+							password:$("#div3-2>div input").eq(1).val()
+						}
+						$.ajax({
+						type:"post",
+						url:"/register",
+						data:users,
+						dataType:"json",
+						success:function(data,statusText,xhr){
+							if(data.success == 500){
+								alert("服务器忙，请稍后重试");
+							}else if(data.success == 1){
+								alert("用户或密码错误");
+							}else if(data.success == 0){
+								if(data.oTop == null){
+									location.assign("/shopping");
+								}else{
+									location.assign(data.oTop);
+								}
+							}
+						},
+						error:function(err){
+							console.log(err);
+						}
+					})
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="div2">
+			<img src="/public/images1/u8465.png" />
+			<div id="div3">
+				<div id="div3-1">
+					<div>登录</div>
+					<div>注册</div>
+				</div>
+				<div id="div3-2">
+					<div><img src="/public/images1/u8558.png"><input type="text" name="" id="" placeholder="手机/邮箱/用户名" /></div>
+					<div><img src="/public/images1/u8560.png"><input type="password" name="" id="" placeholder="密码" /></div>
+					<label><input type="checkbox" name="" id="" />自动登录</label>
+					<a>忘记密码</a>
+					<button>登录</button>
+					<p>其他方式登录：</p>
+					<span><img src="/public/images1/u8550.png"><img src="/public/images1/u8552.png"><img src="/public/images1/u8554.png"><img src="/public/images1/u8556.png"></span>
+				</div>
+				<div id="div3-3">
+					<div><img src="/public/images1/u8558.png"><input type="text" name="" id="" placeholder="用户名" /></div>
+					<div style="width: 160px; margin-left: 18px;display: inline-block;" ><img src="/public/images1/u8560.png"><input style="width: 100px;" type="text" name="" id="" placeholder="验证码" /></div>
+					<input id="div3-3-btn" type="button" name="" id="" value="获取验证码" />
+					<div><img src="/public/images1/u8558.png"><input type="password" name="" id="" placeholder="设置登录密码" /></div>
+					<div><img src="/public/images1/u8560.png"><input type="password" name="" id="" placeholder="再次确认密码" /></div>
+					<button>注册</button>
+				</div>
+			</div>
+		</div>
+		<!-- 导航栏 -->
+		<div id="div1">
+			<table>
+				<img src="/public/images/logo_u49.png" style="width: 80px; height: 40px;" />
+				<tr id="th1">
+					<th>网站首页<img src="/public/images/index4s.png" style=""></th>
+					<th>关于店铺<img src="/public/images/index4s.png" style="left: 82px;"></th>
+					<th>店内项目<img src="/public/images/index4s.png" style="left: 148px;"></th>
+					<th>附近门店<img src="/public/images/index4s.png" style="left: 214px;"></th>
+					<th>宠物医院<img src="/public/images/index4s.png" style="left: 282px;"></th>
+					<th>宠物商城<img src="/public/images/index4s.png" style="left: 348px;display: block;"></th>
+					<th>萌宠学堂<img src="/public/images/index4s.png" style="left: 414px;"></th>
+				</tr>
+			</table>
+		</div>
+
+
+
+		<!-- 末尾版权 -->
+		<div id="div7">
+			<div id="div7-1">
+				<div id="div7-1-1">
+					<p>客服热线</p>
+					<div><img src="/public/images/u209.png" style="width: 25px;padding: 5px;" />
+						<h2 style="float: right;margin-right: 220px;">400-888-888</h2>
+					</div>
+					<p>周一至周日 09:00-22:00</p>
+					<p>地址：长沙市雨花区</p>
+					<p>邮箱：888888888@qq.com</p>
+					<input type="button" value="在线咨询" />
+				</div>
+			</div>
+			<div id="div7-2">版权所有：@INpasdsadasdasd</div>
+		</div>
+	</body>
+</html>

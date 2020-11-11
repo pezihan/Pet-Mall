@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="../public/css/bootstrap.min.css" />
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #fdf1e5;
+		}
+		
+		/* 导航栏 */
+		#div1 {
+			position: absolute;
+			width: 1520px;
+			height: 5px;
+			top: 0px;
+		}
+		
+		#div1 table {
+			position: absolute;
+			border-collapse: collapse;
+			top: 22px;
+			font-size: 14px;
+			left: 600px;
+			color: #000000;
+		}
+		
+		#div1 table tr th {
+			padding: 5px;
+			cursor: default;
+		}
+		
+		#div1 img {
+			position: absolute;
+			left: 510px;
+			top: 12px;
+		}
+		
+		#div1 table tr img {
+			position: relative;
+			left: 15px;
+			top: 0px;
+		}
+		
+		#div1 table tr th img {
+			position: absolute;
+			top: 28px;
+			display: none;
+		}
+		#div2 {
+			width: 1520px;
+			height: 400px;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		#div2 img {
+			width: 100%;
+			height: 100%;
+		}
+
+		/* 购物车部分 */
+		#div3{
+			width: 1025px;
+			height: 40px;
+			background-color: rgba(249,236,225,0.6);
+			margin-left: 250px;
+			position: absolute;
+			z-index: 10;
+			top:360px;
+			color:#757575;
+			cursor: default;
+		}
+		#div3>div{
+			float: left;
+			height: 38px;
+			line-height: 38px;
+			width: 100px;
+			text-align: center;
+		}
+		#div3>div img{margin-right: 5px;}
+		#div3>p{
+			float: right;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			margin-right: 30px;
+			color: #202020;
+			margin-left: 500px;
+		}
+		.exit{
+			float: right;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			margin-right: 30px;
+			color: #c41c1c;
+		}
+		
+		#shoppingApp{
+			width: 1025px;
+			margin-left: 250px;
+		}
+		#shoppingApp>table td{height: 70px;line-height: 60px;border: none;color:#767676}
+		#shoppingApp>table td img{width: 60px;height: 60px;display: inline-block; margin-left: 25px;}
+		.btns{outline: none;background-color: #ee3e3e;border: none; width: 60px;height: 30px;line-height: 30px;color: #FFFFFF;border-radius: 5px;}
+		
+		#kong{
+			background-color: rgba(0,0,0,0);
+			width: 1025px;
+			overflow: hidden;
+			color: #666666;
+			height: 100px;
+			margin-top: 60px;
+			display: none;
+		}
+		#kong-1{
+			margin-left: 180px;
+		}
+		#kong-1>div{
+			float: left;
+			margin-left: 50px;
+		}
+		#kong-1>div h2{
+			font-size: 26px;
+			margin-top: 10px;
+		}
+		#kong-1>div input{
+			background-color: #4eb309;
+			border: none;
+			outline: none;
+			color: #FFFFFF;
+			width: 80px;
+			height: 28px;
+			font-size: 18px;
+			border-radius: 6px;
+			margin-left: 60px;
+			margin-top: 2px;
+		}
+		
+		.box-up{
+			height: 25px;
+			border: solid 1px #bfbfbf;
+			float: left;
+			margin-top: 16px;
+		}
+		.box-up>div{
+			width: 20px;
+			height: 25px;
+			line-height: 25px;
+			background-color: #e8e8e8;
+			text-align: center;
+			float: left;
+			cursor: default;
+		}
+		.box-up>input{
+			float: left;
+			height: 25px;
+			width: 40px;
+			outline: none;
+			border: none;
+			text-align: center;
+			color: #666666;
+		}
+		
+		#navigation{
+			margin-top: 30px;
+			width: 1020px;
+			height: 60px;
+			background-color: #FFFFFF;
+			position: relative;
+		}
+		#navigation>input{
+			float: left;
+			line-height: 60px;
+			margin-top: 23px;
+		}
+		#navigation>p{
+			float: left;
+			line-height: 60px;
+			margin-left: 5px;
+		}
+		#navigation>a{
+			margin-left: 40px;
+			float: left;
+			line-height: 60px;
+			cursor: default;
+		}
+		#navigation>div{
+			float: right;
+			line-height: 60px;
+			margin-right: 200px;
+			color: red;
+		}
+		#navigation button{
+			width: 120px;
+			height: 60px;
+			border-radius: 6px;
+			border: none;
+			background-color:#ee3e3e;
+			color: #FFFFFF;
+			position: absolute;
+			right: 0;
+			outline: none;
+			font-size: 18px;
+			font-weight: 600;
+		}
+		.totalPrice{color: red;}
+		.headline{color: #666666;cursor: default;}
+		
+		#inDetail{
+			position: absolute;
+			border: 1px dotted #fdc491;
+			width: 400px;
+			color: #ff6000;
+			background-color: rgba(253,246,241,0.8);
+			border-radius: 10px;
+			z-index: 100;
+			top: 350px;
+			display: none;
+		}
+		a{color: #ff6000;}
+		#inDetail li{margin-left: 10px;margin-top: 3px;margin-bottom: 3px;}
+		#inDetail p{float: right;}
+		
+		#div4{width: 1100px; height: 600px; margin: 10px auto;margin-top: 60px;}
+		#div4 h2{text-align: center;font-size: 30px;padding: 20px;}
+		#div4 div div img{width: 480px;}
+		#div4-1 div{float: left; padding: 20px; margin-left: 20px;}
+		#div4-2 div{float: left; padding: 20px; margin-left: 20px;}
+		#div4>h2{width: 1025px;margin-left: 20px;}
+		#div4>h2 img{width: 100%;height: 100%;}
+		
+		/* 末尾版权 */
+		#div7{width: 1520px;height: 300px;background-color: #333333;}
+		#div7-1{background-color: #333333;width: 100%;height:260px ;margin-top: 160px;}/* 修改版权栏距离内容距离 */
+		#div7-2{background-color: #292929;width: 100%;height: 40px; color: #FFFFFF;font-size: 13px;text-align: center;line-height: 40px;}
+		#div7-1-1{margin: 10px auto;margin-left: 660px; width: 400px;color: #999999; font-size: 14px;text-align: left;padding:15px ;}
+		#div7-1-1 p{padding: 0px;}
+		#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18px;width: 110px;height: 37px;border-radius: 30px;}
+	</style>
+	<script src="../public/js/jQuery-3.4.1.js"></script>
+	<script>
+		$(function(){
+			//导航栏
+			$("#th1 th").mouseover(function() {
+				$("#th1 th img").css("display", "none");
+				$("#th1 th img:eq(5)").css("display", "block");
+				$("#th1 th img").eq($("#th1 th").index(this)).css("display", "block");
+			});
+			$("#th1 th").mouseout(function() {
+				$("#th1 th img").css("display", "none");
+				$("#th1 th img:eq(5)").css("display", "block");
+			});
+			$("#th1 th").click(function() {
+				var iNdexs = $("#th1 th").index(this);
+				if (iNdexs == 0) {
+					location.assign("../public/index.html");
+				} else if (iNdexs == 1) {
+					location.assign("../public/关于店铺.html");
+				} else if (iNdexs == 3) {
+					location.assign("../public/附近门店.html");
+				} else if (iNdexs == 2) {
+					location.assign("../public/店内项目.html");
+				} else if (iNdexs == 4) {
+					location.assign("../public/宠物医院.html");
+				} else if (iNdexs == 6) {
+					location.assign("../public/萌宠学堂.html");
+				}
+			});
+
+			//购物车
+			//全选
+			$(".selects").click(function(){
+				if($(this).prop("checked") == true){
+					$(this).prop("checked",true);
+					$(".select").prop("checked",true);					
+				}else if($(this).prop("checked") == false){
+					$(this).prop("checked",false);
+					$(".select").prop("checked",false);
+				}
+			});
+			//单选
+			$(".table").on("click",".select",function(){
+				var ind = 0;
+				var quan = 0;
+				for(var i = 0;i < $(".select").length;i++){
+					if($(".select").eq(i).prop("checked") == false){
+						ind++;
+					}else if($(".select").eq(i).prop("checked") == true){
+						quan++;
+					}
+				}
+				if(quan == $(".select").length){
+					$(".selects").prop("checked",true);
+				}else{
+					$(".selects").prop("checked",false);
+				}
+			})
+
+			//删除
+			$(".table").on("click",".btns",function(){
+				var atr = 0;
+				var dele = {};
+				dele.id = String($(this).parents("tr").attr("id"));
+				var _that = $(this);
+				$.ajax({
+					type:"post",
+					url:"/deleteorderForm",
+					data:dele,
+					dataType:"json",
+					success:function(data,statusText,xhr){
+						if(data.success != 0){
+							alert(data.message);
+						}else{
+							_that.parents("tr").remove();//parents选择自定义的上级元素
+							kong();
+						}
+					},
+					error:function(err){
+						console.log(err);
+						alert("错误")
+					}
+				})
+			})
+
+			$("#deletes").click(function(){//删除选中
+				if($(".table tr").length != 0){
+					var oIds = new Array();
+					var dele = {};
+					for(var i = 0;i < $(".select").length;i++){
+						if($(".select").eq(i).prop("checked") == true){
+						oIds.push($(".select").eq(i).parents("tr").attr("id"));
+					}
+				}
+				dele.id = oIds;
+				$.ajax({
+							type:"get",
+							url:"/deleteorderForms",
+							data:dele,
+							dataType:"json",
+							success:function(data,statusText,xhr){
+								if(data.success != 0){
+									alert(data.message);
+								}else{
+									location.assign('/Allorders');
+								}
+							},
+							error:function(err){
+								console.log(err);
+								alert("错误")
+							}
+						})
+				kong();
+				}else{
+					alert("没有可删除的订单")
+				}
+			})
+
+			//详细订单
+			$(".table").on("mouseover",".headline",function(ev){
+				$("#inDetail li").eq(0).html("订单编号：" + $(this).attr("orderNumber"));
+				$("#inDetail li").eq(1).html("创建时间：" + $(this).attr("creationTime"));
+				$("#inDetail li").eq(2).html("消费门店：" + $(this).attr("shop"));
+				$("#inDetail li").eq(3).html("收货地址：" + $(this).attr("site"));
+				$("#inDetail").show();
+				var offsetX = ev.pageX + 20;
+				var offsetY = ev.pageY - 50;
+				$("#inDetail").css({top:offsetY,left:offsetX});
+			}).on("mousemove",".headline",function(ev){
+				$("#inDetail").show();
+				var offsetX = ev.pageX + 20;
+				var offsetY = ev.pageY - 50;
+				$("#inDetail").css({top:offsetY,left:offsetX});
+			}).on("mouseout",".headline",function(){
+				$("#inDetail").hide();
+			})
+			
+			kong();
+			function kong(){
+				if($(".table tr").length == 0){
+					$("#kong").show();
+				}else{
+					$("#kong").hide();
+				}
+			};
+			// 用户登录信息获取与退出登录
+			$.ajax({
+				type:"post",
+				url:"/condition",
+				dataType:"json",
+				success:function(data,statusText,xhr){
+					if(data.success == 0){
+						$("#div3>p").html("欢迎登录：" + data.message);
+					}
+				},
+				error:function(err){
+						console.log(err);
+						alert("错误")
+					}
+				})
+			$(".exit").click(function(){//退出登录
+				$.ajax({
+				type:"get",
+				url:"/exit",
+				dataType:"json",
+				success:function(data,statusText,xhr){
+					if(data.success == 0){
+						location.assign("/login");
+					}
+				},
+				error:function(err){
+						console.log(err);
+					}
+				})
+			});
+		})
+	</script>
+	<body>
+		<div id="div2">
+			<img src="../public/images1/u8627.png" />
+		</div>
+		<!-- 导航栏 -->
+		<div id="div1">
+			<table>
+				<img src="../public/images/logo_u49.png" style="width: 80px; height: 40px;" />
+				<tr id="th1">
+					<th>网站首页<img src="../public/images/index4s.png"/ style=""></th>
+					<th>关于店铺<img src="../public/images/index4s.png"/ style="left: 82px;"></th>
+					<th>店内项目<img src="../public/images/index4s.png"/ style="left: 148px;"></th>
+					<th>附近门店<img src="../public/images/index4s.png"/ style="left: 214px;"></th>
+					<th>宠物医院<img src="../public/images/index4s.png"/ style="left: 282px;"></th>
+					<th>宠物商城<img src="../public/images/index4s.png"/ style="left: 348px;display: block;"></th>
+					<th>萌宠学堂<img src="../public/images/index4s.png"/ style="left: 414px;"></th>
+				</tr>
+			</table>
+		</div>
+		
+		<!-- 购物车导航栏 -->
+		<div id="div3">
+			<div onclick="location.assign('/shopping')"><img src="../public/images1/u8674s.png"/>购物车</div>
+			<div style="color:#ff6000;border-bottom: 2px #ff6000 solid;"><img src="../public/images1/u9024.png"/>所有订单</div>
+			<a class='exit'>退出登录</a>
+			<p></p>
+		</div>
+		<!-- 购物车部分 -->
+		<div id="shoppingApp">
+			<table class="table table-striped table-hover">
+				{{each shop}}
+				<tr id="{{$value.id}}">
+					<td style="width: 150px;"><input class="select" type="Checkbox"/ style="margin-left: 15px;"><img src="{{$value.imgSrc}}"/></td>
+					<td style="width: 360px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;" ><a orderNumber="{{$value.orderNumber}}" creationTime="{{$value.creationTime}}" shop="{{$value.shop}}" site="{{$value.site}}" class="headline">{{$value.headline}}</a></td>
+					<td>规格：<a style="display: initial;">{{$value.specification}}</a></td>
+					<td>数量：<a style="display: initial;">{{$value.amount}}<a/></td>
+					<td>￥<a sum="{{$value.sum}}" class="itPrice">{{$value.sum}}</a></td>
+					<td><button class="btns">删除</button></td>
+				</tr>
+				{{/each}}
+			</table>
+			<div id="kong">
+				<div id="kong-1">
+					<div><img src="../public/images1/u8725.png"></div>
+					<div>
+						<h2>你当前无订单，快去选购吧！</h2>
+						<input type="button" value="去商场" onclick="location.assign('../public/宠物商城.html')"/>
+						<input type="button" value="去首页" onclick="location.assign('../public/index.html')" />
+					</div>
+				</div>
+			</div>
+			<div id="navigation">
+				<input class="selects" type="Checkbox" style="margin-left: 15px;"/>
+				<p>全选</p>
+				<button id="deletes">删除订单</button>
+			</div>
+		</div>
+		<div id="div4">
+			<h2><img src="../public/images1/u8875.png"/></h2>
+			<div id="div4-1">
+				<div><img onclick="location.assign('../public/宠物商城/爱诺主粮专区.html')" src="../public/images/banner-1-1.png" /></div>
+				<div><img onclick="location.assign('../public/宠物商城/哈格零食专场.html')" src="../public/images/banner-1-2.png" /></div>
+			</div>
+			<div id="div4-2">
+				<div><img onclick="location.assign('../public/宠物商城/贝帮保健护理专场.html')" src="../public/images/banner-1-3.png" /></div>
+				<div><img onclick="location.assign('../public/宠物商城/博览梳尽在瑞丝.html')" src="../public/images/banner-1-4.png" /></div>
+			</div>
+		</div>
+		
+		<!-- 末尾版权 -->
+		<div id="div7">
+			<div id="div7-1">
+				<div id="div7-1-1">
+					<p>客服热线</p>
+					<div><img style="float: left; margin-right: 10px;" src="../public/images/u209.png" style="width: 25px;padding: 5px;" />
+						<h2>400-888-888</h2>
+					</div>
+					<p>周一至周日 09:00-22:00</p>
+					<p>地址：长沙市雨花区</p>
+					<p>邮箱：888888888@qq.com</p>
+					<input type="button" value="在线咨询" />
+				</div>
+			</div>
+			<div id="div7-2">版权所有：@INpasdsadasdasd</div>
+		</div>
+		<!-- 详细信息显示 -->
+		<div id="inDetail">
+			<li>订单编号：<p>1212121223231</p></li>
+			<li>创建时间：<p>2020-10-10 10:20:32</p></li>
+			<li>门店消费：<p>湖南省长沙市天心区</p></li>
+			<li>收货地址：<p>湖南省长沙市雨花区</p></li>
+		</div>
+	</body>
+</html>

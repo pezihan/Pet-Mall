@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>宠物商城</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			/* y右侧信息导航 */
+			#fixedField{width: 40px;height: 100%;background-color: #444444;position: fixed;z-index: 100;right: 0;}
+			#fixedField img{width: 28px;}
+			#fixedField>a{color: #DF8225; width: 20px;height: 100px;display: block;margin-top: 20px;margin-left: 10px;list-style-type: none;text-decoration:none}
+			.fixedField_1{cursor: default;width: 40px;font-size: 14px;font-weight: 200; height: 100px;text-align: center;background-color: #444444;color: aliceblue;  position: relative; top: 55px;margin-bottom: 50px;padding-top: 18px;}
+			.fixedField_1>div{cursor: default;color: #FFFFFF;font-size: 14px;  position: absolute;width: 150px;height: 35px;line-height: 35px; background-color: #444444;border-radius: 3%; vertical-align: middle;top: 40px; left: -150px;display: none;}
+			.fixedField_1>div>a{color: #DF8225;cursor: default}
+			.fixedField_1:hover{background-color: #7a7a7a;}
+			/* 导航栏 */
+			#div1 {
+				position: absolute;
+				width: 1520px;
+				height: 5px;
+				top: 0px;
+			}
+			
+			#div1 table {
+				position: absolute;
+				border-collapse: collapse;
+				top: 22px;
+				font-size: 14px;
+				left: 600px;
+				color: aliceblue;
+			}
+			
+			#div1 table tr th {
+				padding: 5px;
+				cursor: default;
+			}
+			
+			#div1 img {
+				position: absolute;
+				left: 510px;
+				top: 12px;
+			}
+			
+			#div1 table tr img {
+				position: relative;
+				left: 15px;
+				top: 0px;
+			}
+			
+			#div1 table tr th img {
+				position: absolute;
+				top: 28px;
+				display: none;
+			}
+			#div2 {
+				width: 1520px;
+				height: 400px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#div2 img {
+				width: 100%;
+				height: 100%;
+			}
+			#oh2{
+				text-align: center;
+				line-height: 100px;
+			}
+			.maxdiv{
+				width: 1000px;
+				margin: 0 auto;
+				overflow: overlay;//随里面的内容自动获取高度
+			}
+			.mindiv{
+				float: left;
+				margin: 10px ;
+				height: 260px;
+				background-color: #F1F1F1;
+				border-radius: 5px;
+				overflow: hidden;
+			}
+			.mindiv img{
+				width: 230px;
+				height: 180px;
+			}
+			.mindiv a{
+				width: 180px;
+				height: 30px;
+				display: block;
+				font-size: 12px;
+				margin: 0 auto;
+				margin-bottom: 6px;
+				text-overflow: ellipsis;
+				cursor: default;
+			}
+			.mindiv div{
+				background-color: #FECB02;
+				width: 180px;
+				height: 1px;
+				margin: 10px auto;
+			}
+			.mindiv p{
+				font-size: 12px;
+				float: right;
+				margin-right: 20px;
+			}
+			#btn{
+				width: 100%;
+				height: 32px;
+				margin: 0 auto;
+				margin-top: 30px;
+				display: inline-block;
+				text-align: center;
+			}
+			#btn button{
+				height: 32px;
+				width: 80px;
+				border-radius: 4px;
+				background-color: #FFCF10;
+				border: none;
+				color: #FFFFFF;
+				font-size: 20px;
+				outline: none;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			#btn div{
+				display: inline-block;
+				border:#FFCF10 1px solid ;
+				width: 22px;
+				height: 22px;
+				line-height: 22px;
+				text-align: center;
+				cursor: default;
+			}
+			
+			/* 末尾版权 */
+			#div7{width: 1520px;height: 300px;background-color: #333333;}
+			#div7-1{background-color: #333333;width: 100%;height:260px ;margin-top: 100px;}/* 修改版权栏距离内容距离 */
+			#div7-2{background-color: #292929;width: 100%;height: 40px; color: #FFFFFF;font-size: 13px;text-align: center;line-height: 40px;}
+			#div7-1-1{margin: 0px auto;margin-left: 660px; width: 400px;color: #999999; font-size: 14px;text-align: left;padding:15px ;}
+			#div7-1-1 p{padding: 10px;}
+			#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18px;width: 110px;height: 37px;border-radius: 30px;}
+		</style>
+		<script src="js/jQuery-3.4.1.js"></script>
+		<script>
+			$(function(){
+				//导航栏
+				$("#th1 th").mouseover(function() {
+					$("#th1 th img").css("display", "none");
+					$("#th1 th img:eq(6)").css("display", "block");
+					$("#th1 th img").eq($("#th1 th").index(this)).css("display", "block");
+				});
+				$("#th1 th").mouseout(function() {
+					$("#th1 th img").css("display", "none");
+					$("#th1 th img:eq(6)").css("display", "block");
+				});
+				$("#th1 th").click(function() {
+					var iNdexs = $("#th1 th").index(this);
+					if (iNdexs == 0) {
+						location.assign("index.html");
+					} else if (iNdexs == 1) {
+						location.assign("关于店铺.html");
+					} else if (iNdexs == 3) {
+						location.assign("附近门店.html");
+					} else if (iNdexs == 2) {
+						location.assign("店内项目.html");
+					} else if (iNdexs == 4) {
+						location.assign("宠物医院.html");
+					} else if (iNdexs == 5) {
+						location.assign("宠物商城.html");
+					}
+				});
+				$(".maxdiv").hide().eq(0).show();
+				$("#btn>div").eq(0).css("background-color","#FFCF10");
+				var oid = 0;
+				$("#btn>button").eq(1).click(function(){
+					if(oid == $("#btn>div").length-1){
+						oid = $("#btn>div").index();
+					}else{
+						oid++;
+						$("#btn>div").css("background-color","").eq(oid).css("background-color","#FFCF10");
+						$(".maxdiv").hide().eq(oid).show();
+					}
+				});
+				$("#btn>button").eq(0).click(function(){
+					if(oid > 0){
+						oid--;
+						$("#btn>div").css("background-color","").eq(oid).css("background-color","#FFCF10");
+						$(".maxdiv").hide().eq(oid).show();
+					}
+				});
+				$("#btn>div").click(function(){
+					oid = $(this).index()-1;
+					$("#btn>div").css("background-color","").eq(oid).css("background-color","#FFCF10");
+					$(".maxdiv").hide().eq(oid).show();
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<!-- 右侧固定个人信息导航栏 -->
+		<div id="fixedField">
+			<a href="/login" style="width: 10px; ">点击登录</a>
+			<div class="fixedField_1"><img src="images/icon_1.png">购物车
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1"><img src="images/icon_2.png">在线客服
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1"><img src="images/icon_3.png">我的订单
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1">
+				<img src="images/icon_up.png">
+				<div id="topUp" style="width: 80px; height: 40px; top: 20px;left: -80px;background-color: #FFD70A;line-height: 40px;"><a
+					 href="#" style="color: #FFFFFF;">返回顶层</a></div>
+			</div>
+		</div>
+		<div id="div2">
+			<img src="./images/宠物学堂/u9092.jpg" />
+		</div>
+		<!-- 导航栏 -->
+		<div id="div1">
+			<table>
+				<img src="images/logo_u49.png" style="width: 80px; height: 40px;" />
+				<tr id="th1">
+					<th>网站首页<img src="./images/index4.png"/ style=""></th>
+					<th>关于店铺<img src="./images/index4.png"/ style="left: 82px;"></th>
+					<th>店内项目<img src="./images/index4.png"/ style="left: 148px;"></th>
+					<th>附近门店<img src="./images/index4.png"/ style="left: 214px;"></th>
+					<th>宠物医院<img src="./images/index4.png"/ style="left: 282px;"></th>
+					<th>宠物商城<img src="./images/index4.png"/ style="left: 348px;"></th>
+					<th>萌宠学堂<img src="./images/index4.png"/ style="left: 414px;display: block;"></th>
+				</tr>
+			</table>
+		</div>
+		<h2 id="oh2">萌宠学堂</h2>
+		<div class="maxdiv">
+			<div>
+				<div class="mindiv" onclick="location.assign('宠物学堂/长得再帅也掩盖不了腿短！真是心疼我们萌萌的小柯基！.html')">
+					<img src="./images/宠物学堂/u9159.png" >
+					<a>长得再帅也掩盖不了腿短！真是心疼我们萌萌的小柯基！</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+				<div class="mindiv" onclick="location.assign('宠物学堂/冬天遛狗别大意，路上隐藏的危害你知道吗？.html')">
+					<img src="./images/宠物学堂/u9256.png" >
+					<a>冬天遛狗别大意，路上隐藏的危害你知道吗?</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+				<div class="mindiv" onclick="location.assign('宠物学堂/冬天狗狗爱生病？十个过冬小常识，了解这些就够了！.html')">
+					<img src="./images/宠物学堂/u9259.png" >
+					<a>冬天狗狗爱生病？十个过冬小常识，了解这些就够了</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+				<div class="mindiv" onclick="location.assign('宠物学堂/狗狗喜欢你的10种表现，测试你狗缘的时候到了.html')">
+					<img src="./images/宠物学堂/u9262.png" >
+					<a>狗狗喜欢你的10种表现，测试你狗缘的时候到了</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+			</div>
+			<div>
+				<div class="mindiv">
+					<img src="./images/宠物学堂/u9265.png" >
+					<a>秋季毛球攻坚战，WOWO化毛膏助你一臂之力</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+				<div class="mindiv">
+					<img src="./images/宠物学堂/u9267.png" >
+					<a>猫有猫薄荷可以吸，那狗呢？狗子：主人的气味</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+				<div class="mindiv">
+					<img src="./images/宠物学堂/u9269.png" >
+					<a>给狗狗耳朵缝了7颗纽扣，引众怒，兽医却说：这是在治病</a>
+					<div></div>
+					<p></p>
+				</div>
+				<div class="mindiv">
+					<img src="./images/宠物学堂/u9271.png" >
+					<a>为什么不着调的“二哈”，可以有组织有纪律地拉雪橇？</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+			</div>
+			<div>
+				<div class="mindiv">
+					<img src="./images/宠物学堂/u9273.png" >
+					<a>狗对主人这么好，是因为它们本身具有奴性</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+				<div class="mindiv">
+					<img src="./images/宠物学堂/u9275.png" >
+					<a>你什么时候发现，狗狗也在爱着你？</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+				<div class="mindiv">
+					<img src="./images/宠物学堂/u9277.png" >
+					<a>这只金毛治疗犬的“温柔乡”，看一眼就醉了</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+				<div class="mindiv">
+					<img src="./images/宠物学堂/u9279.png" >
+					<a>狗狗毛发打结怎么办，WOWO卵磷脂软颗粒来帮你</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+			</div>
+		</div>
+		<div class="maxdiv">
+			<div>
+				<div class="mindiv" onclick="location.assign('宠物学堂/在家里，为什么你的地位不如狗？.html')">
+					<img src="./images/宠物学堂/u9313.png">
+					<a>在家里，为什么你的地位不如狗？</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+				<div class="mindiv" onclick="location.assign('宠物学堂/如何让“猫癣”彻底消失.html')">
+					<img src="./images/宠物学堂/u9316.png" >
+					<a>如何让“猫癣”彻底消失</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+				<div class="mindiv" onclick="location.assign('宠物学堂/生病才喂WOWO羊奶粉？你错了.html')">
+					<img src="./images/宠物学堂/u9319.png" >
+					<a>生病才喂WOWO羊奶粉？你错了</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+				<div class="mindiv" onclick="location.assign('宠物学堂/成年橘猫胖成球，挑哪个猫粮好？WOWO猫粮助猫瘦身.html')">
+					<img src="./images/宠物学堂/u9322.png" >
+					<a>成年橘猫胖成球，挑哪个猫粮好？WOWO猫粮助猫瘦身</a>
+					<div></div>
+					<p>2020-09-06</p>
+				</div>
+			</div>
+		</div>
+		<div id="btn">
+			<button>上一页</button>
+			<div>1</div>
+			<div>2</div>
+			<button>下一页</button>
+		</div>
+		
+		<!-- 末尾版权 -->
+		<div id="div7">
+			<div id="div7-1">
+				<div id="div7-1-1">
+					<p>客服热线</p>
+					<div><img src="images/u209.png" style="width: 25px;padding: 5px;" />
+						<h2 style="float: right;margin-right: 220px;">400-888-888</h2>
+					</div>
+					<p>周一至周日 09:00-22:00</p>
+					<p>地址：长沙市雨花区</p>
+					<p>邮箱：888888888@qq.com</p>
+					<input type="button" value="在线咨询" />
+				</div>
+			</div>
+			<div id="div7-2">版权所有：@INpasdsadasdasd</div>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			//右侧信息导航栏
+			$(".fixedField_1").mouseout(function(){
+				$(this).children("div").hide();
+			})
+				$(".fixedField_1").eq(0).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") == 0){
+						location.assign('/shopping');
+					}else{
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				$(".fixedField_1").eq(1).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") != 0){
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				$(".fixedField_1").eq(2).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") == 0){
+						location.assign('/Allorders');
+					}else{
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				
+				$(".fixedField_1").eq(3).mouseover(function(){
+					$(this).children("div").show().mouseout(function(){//children获取当前元素下的自定义子代元素
+						$(this).hide();
+					});
+				}).mouseout(function(){
+						$(this).children("div").hide();
+					});
+				//右侧信息导航栏点击返回最上面
+				$("#topUp").click(function(){
+					$("html,body").animate({scrollTop:0},500);
+				});
+			$.ajax({
+				type:"post",
+				url:"/condition",
+				dataType:"json",
+				success:function(data,statusText,xhr){
+					if(data.success == 0){
+						$("#fixedField>a").html("已登录");
+						$("#fixedField").attr("login",0)
+					}else{
+						$("#fixedField>a").html("点击登录");
+					}
+				},
+				error:function(err){
+						console.log(err);
+						alert("错误")
+					}
+				})
+		})
+	</script>
+</html>

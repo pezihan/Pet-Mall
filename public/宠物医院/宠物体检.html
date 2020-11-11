@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>宠物体检</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			/* 导航栏 */
+			#div1 {
+				position: absolute;
+				width: 1520px;
+				height: 5px;
+				top: 0px;
+			}
+			
+			#div1 table {
+				position: absolute;
+				border-collapse: collapse;
+				top: 22px;
+				font-size: 14px;
+				left: 600px;
+				color: #000000;
+			}
+			
+			#div1 table tr th {
+				padding: 5px;
+				cursor: default;
+			}
+			
+			#div1 img {
+				position: absolute;
+				left: 510px;
+				top: 12px;
+			}
+			
+			#div1 table tr img {
+				position: relative;
+				left: 15px;
+				top: 0px;
+			}
+			
+			#div1 table tr th img {
+				position: absolute;
+				top: 28px;
+				display: none;
+			}
+			
+			#div3{
+				width: 1200px;
+				margin: 0 auto;
+				overflow: overlay;
+				margin-top: 140px;
+			}
+			#div3-1{
+				width: 420px;
+				position: relative;
+				float: left;
+			}
+			
+			.div3-1-1{
+				width: 340px;
+				height: 300px;
+				margin: 0 auto;
+				position: relative;
+			}
+			.div3-1-1>img{
+				width: 100%;
+				height: 100%;
+			}/* 放大镜 */
+			#mark {
+				width: 120px;
+				height: 120px;
+				display: none;
+				background-color: #FFFFFF;
+				opacity: 0.5;
+				filter: alpha(opacity=50);
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+			
+			#big {
+				width: 240px;
+				height: 240px;
+				border: 1px solid #cbcbcb;
+				left: 500px;
+				top: 100px;
+				position: absolute;
+				overflow: hidden;
+				display: none;
+				z-index: 3;
+			}
+			
+			/* overflow属性规定内容溢出元素框时发生的事情，hidden内容会被修剪，并且其余不可见 */
+			#big img {
+				width: 680px;
+				height: 600px;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}			
+			.div3-1-2{
+				margin-top: 20px;
+				width: 420px;
+				height: 80px;
+			}
+			.div3-1-2 img{
+				width: 80px;
+				height: 80px;
+			}
+			.alefts{
+				float: left;
+				width: 20px;
+				height: 80px;
+				border: #cccccc solid 1px;
+				vertical-align: middle;
+			}
+			.alefts img{
+				width: 10px;
+				height: 20px;
+				margin-top: 30px;
+				margin-left: 5px;
+			}
+			.aImgs{
+				float: left;
+				margin: 0 5px;
+				border: #cccccc solid 1px;
+				height: 80px;
+				overflow: hidden;
+				margin-left: 7px;
+			}
+			.arights{
+				float: right;
+				width: 20px;
+				height: 80px;
+				border: #cccccc solid 1px;
+			}
+			.arights>img{
+				width: 10px;
+				height: 20px;
+				margin-top: 30px;
+				margin-left: 5px;
+			}
+			
+			
+			#div3-2{
+				float: right;
+				width: 650px;
+				background-color: #f8f8f8;
+				padding-left: 40px;
+			}
+			#div3-2>h2{
+				font-size: 20px;
+				padding: 5px;
+			}
+			#div3-2>p{
+				color: red;
+				font-size: 14px;
+				padding: 5px;
+			}
+			#div3-2>a{
+				font-size: 14px;
+				color: #666666;
+			}
+			#div3-2>button{
+				width: 180px;
+				height: 45px;
+				border: none;
+				border-radius:6px ;
+				background-color: #78b300;
+				color: #FFFFFF;
+				font-size: 20px;
+				outline: none;
+				margin-top: 30px;
+				margin-bottom: 10px;
+			}
+			.div3-2-1{
+				background-color: #efefef;
+				width: 600px;
+			}
+			.div3-2-1>span{
+				display: block;
+				margin-bottom: 10px;
+				margin-left: 10px;
+				padding: 5px;
+				font-size: 14px;
+				color: #666666;
+			}
+			.div-3-2-2{
+				border-top: #cccccc 1px dotted;
+				border-bottom: #cccccc 1px dotted;
+				margin-top: 10px;
+				padding: 10px;
+				width: 600px;
+				overflow: overlay;
+			}
+			
+			/* 单选框 */
+			.label_box{
+				margin-left: 10px;
+				float: left;
+				vertical-align: middle;
+			}
+			.label_box>label{
+				display: block;
+				float: left;
+				margin: 0 10px 10px 0;
+				position: relative;
+				overflow: hidden;
+			}
+			.label_box>label>input{
+				position: absolute;
+				top: 0;
+				left: -20px;
+			}
+			.label_box>label>div{
+				width: 60px;
+				text-align: center;
+				border: #DDDDDD solid 1px;
+				height: 25px;
+				line-height: 25px;
+				color: #666666;
+				user-select: none;
+				overflow: hidden;
+				position: relative;
+			}
+			.label_box>label>input:checked + div{
+				border: #d51917 solid 1px;
+				color: #D51917;
+			}
+			.label_box>label>input:checked + div::after{
+				content: '';
+				display: block;
+				width: 20px;
+				height: 20px;
+				background-color: #D51917;
+				transform: skewY(-45deg);
+				position: absolute;
+				bottom: -10px;
+				right: 0;
+				z-index: 1;
+			}
+			.label_box>label>input:checked + div::before{
+				content: '';
+				display: block;
+				width: 3px;
+				height: 8px;
+				border-right: #FFFFFF solid 2px;
+				border-bottom: #FFFFFF solid 2px;
+				transform: rotate(35deg);
+				position: absolute;
+				bottom: 2px;
+				right: 4px;
+				z-index: 2;
+			}
+			.box-up{
+				height: 25px;
+				border: solid 1px #bfbfbf;
+				float: left;
+				margin-left: 10px;
+			}
+			.box-up>div{
+				width: 20px;
+				height: 25px;
+				background-color: #e8e8e8;
+				text-align: center;
+				float: left;
+				cursor: default;
+			}
+			.box-up>input{
+				float: left;
+				height: 25px;
+				width: 40px;
+				outline: none;
+				border: none;
+				text-align: center;
+				color: #666666;
+			}
+			.Selct{
+				float: left;
+				color: #666666;
+				font-size: 14px;
+			}
+			.Selct>select{
+				height: 25px;
+				margin-top: 10px;
+				color: #666666;
+			}
+			#div4{width: 1100px; height: 600px; margin: 10px auto;margin-top: 60px;}
+			#div4 h2{text-align: center;font-size: 30px;padding: 20px;}
+			#div4 div div img{width: 480px;}
+			#div4-1 div{float: left; padding: 20px; margin-left: 20px;}
+			#div4-2 div{float: left; padding: 20px; margin-left: 20px;}
+			
+			/* 加入购物车弹窗显示 */
+			#shade{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,0.4);
+				display: none;
+				z-index: 100;
+			}
+			
+			#shade>div{
+				background-color: #FFFFFF;
+				width: 560px;
+				height: 380px;
+				border-radius: 10px;
+				margin: 0 auto;
+				margin-top: 140px;
+				position: relative;
+			}
+			#btnoff{
+				position: absolute;
+				right: 10px;
+				top: 5px;
+			}
+			.shade-1{
+				height: 180px;
+				width: 500px;
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				float: left;
+			}
+			.shade-1>p{
+				float: right;
+				font-size: 17px;
+				position: absolute;
+				right: 30px;
+				top:50px;
+			}
+			.shade-1 input{
+				float: right;
+				width: 100px;
+				height: 40px;
+				color: #666666;
+				border: 1px solid #7A7A7A;
+				border-radius: 6px;
+				margin-right: 45px;
+				margin-top: 100px;
+				outline: none;
+				background-color: #FFFFFF;
+			}
+			.shade-2{
+				position: absolute;
+				bottom: 10px;
+				left: 20px;
+				padding-top: 15px;
+				border-top: #666666 1px dotted;
+			}
+			.shade-2>p{
+				font-size: 14px;
+				color: #666666;
+				padding-bottom: 10px;
+			}
+			.shade-2>div div{
+				width: 250px;
+				float: left;
+				margin-right: 15px;
+			}
+			.shade-2>div div img{
+				width: 100%;
+				height: 100%;
+			}
+			/* 末尾版权 */
+			#div7{width: 1520px;height: 300px;background-color: #333333;margin-top: 60px;}
+			#div7-1{background-color: #333333;width: 100%;height:260px ;}
+			#div7-2{background-color: #292929;width: 100%;height: 40px; color: #FFFFFF;font-size: 13px;text-align: center;line-height: 40px;}
+			#div7-1-1{margin: 0px auto;margin-left: 660px; width: 400px;color: #999999; font-size: 14px;text-align: left;padding:15px ;}
+			#div7-1-1 p{padding: 10px;}
+			#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18px;width: 110px;height: 37px;border-radius: 30px;}
+		</style>
+		<script src="../js/jQuery-3.4.1.js"></script>
+		<script>
+			$(function(){
+				//导航栏
+				$("#th1 th").mouseover(function() {
+					$("#th1 th img").css("display", "none");
+					$("#th1 th img:eq(4)").css("display", "block");
+					$("#th1 th img").eq($("#th1 th").index(this)).css("display", "block");
+				});
+				$("#th1 th").mouseout(function() {
+					$("#th1 th img").css("display", "none");
+					$("#th1 th img:eq(4)").css("display", "block");
+				});
+				$("#th1 th").click(function() {
+					var iNdexs = $("#th1 th").index(this);
+					if (iNdexs == 0) {
+						location.assign("../index.html");
+					} else if (iNdexs == 1) {
+						location.assign("../关于店铺.html");
+					} else if (iNdexs == 3) {
+						location.assign("../附近门店.html");
+					} else if (iNdexs == 5) {
+						location.assign("../宠物商城.html");
+					} else if (iNdexs == 4) {
+						location.assign("../宠物医院.html");
+					} else if (iNdexs == 6) {
+						location.assign("../萌宠学堂.html");
+					}else if(iNdexs == 2){
+						location.assign('../店内项目.html');
+					}
+				});
+				var that = 0;
+				$(".aImgs>img").click(function(){
+					 that = $(this).parent().index()-1;
+					tab();
+				});
+				$(".alefts").click(function(){
+					if(that > 0){
+						that--;
+						tab();
+					}
+				}).mousedown(function(){
+					$(this).css("background-color","#f3f3f3");
+				}).mouseup(function(){
+					$(this).css("background-color","");
+				});
+				$(".arights").click(function(){
+					if(that < 4){
+						that++;
+						tab();
+					}else{
+						that = 3;
+					}
+				}).mousedown(function(){
+					$(this).css("background-color","#f3f3f3");
+				}).mouseup(function(){
+					$(this).css("background-color","");
+				});
+				function tab(){
+					var asrc = $(".aImgs>img").eq(that).attr("src");
+					$(".div3-1-1>img").hide().fadeIn();
+					$(".div3-1-1>img").attr("src",asrc);
+				}
+				
+				$(".box-up div").eq(0).click(function(){
+					var str = Number($(".box-up input").val())-1;
+					if(str > 0){
+						$(".box-up input").val(str);
+					}
+				});
+				$(".box-up div").eq(1).click(function(){
+					var str = Number($(".box-up input").val())+1;
+					$(".box-up input").val(str);
+				});
+				$(".box-up input").blur(function(){//输入框失去焦点事件
+					if(Number($(".box-up input").val())<1){
+						$(this).val('1');
+					}
+				});
+				
+				
+				//放大镜
+				$("#small").mouseover(function(){
+					$("#mark").show();
+					$("#big").show();
+					var osrc = $("#small>img").attr("src");
+					$("#big img").attr("src",osrc);
+				})
+				$("#small").mouseout(function(){
+					$("#mark").hide();
+					$("#big").hide();
+				})
+				$("#small").mousemove(function(ev){
+					var offTop = ev.clientY - $(this).offset().top - 60;
+					var offLeft = ev.clientX - $(this).offset().left - 60;
+					if(offTop <= 0){
+						offTop = 0;
+					}else if(offTop >= $("#small").height() - $("#mark").height()){
+						offTop = $("#small").height() - $("#mark").height();
+					}
+					if(offLeft <= 0){
+						offLeft = 0;
+					}else if(offLeft >= $("#small").width() - $("#mark").width()){
+						offLeft = $("#small").width() - $("#mark").width();
+					}
+					$("#mark").css({"top":offTop,"left":offLeft});
+					$("#mark").css("display","block");
+					$("#big img").css({"top":offTop*-2,"left":offLeft*-2});
+				});
+				
+				/* 遮罩 */
+				$(".shade-1 input").eq(0).css({"background-color":"#f03e3e","color":"#ffffff","border":"none"});
+				$("#btnoff").click(function(){
+					$("#shade").hide();
+				});
+				$(".shade-1 input").eq(1).click(function(){
+					$("#shade").hide();
+				})
+				/* 加入购物车 */
+				$(".shade-1 input").eq(0).click(function(){
+					location.assign("/shopping");
+				})
+				var specification = null;
+				$(".label_box").on("click","div",function(){
+					specification = $(this).html();
+				})
+				$("#div3-2>button").click(function(){
+					if(specification == null){
+						alert("请选择产品规格");
+					}else if($(".Selct select").find("option:selected").text() == "请选择"){
+						alert("请选择消费的门店")
+					}else{
+						var petShop = {
+						serial:7,//商品序号
+						specification:specification,//商品规格
+						amount:parseInt($(".box-up input").val()),//购买数量
+						shop:$(".Selct select").find("option:selected").text(),//消费门店
+						site:"门店消费",//收货地址
+						ourl:window.location.pathname
+						}
+						$.ajax({
+							type:"post",
+							url:"/addShopping",
+							data:petShop,
+							dataType:"json",
+							success:function(data,statusText,xhr){
+								if(data.success != 0){
+									alert(data.message);
+									location.assign("/login");
+								}else{
+									$("#shade").show();
+								}
+							},
+							error:function(err){
+								console.log(err);
+							}
+						});
+					}
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<!-- 导航栏 -->
+		<div id="div1">
+			<table>
+				<img src="../images/logo_u49.png" style="width: 80px; height: 40px;" />
+				<tr id="th1">
+					<th>网站首页<img src="../images/index4s.png"/ style=""></th>
+					<th>关于店铺<img src="../images/index4s.png"/ style="left: 82px;"></th>
+					<th>店内项目<img src="../images/index4s.png"/ style="left: 148px;"></th>
+					<th>附近门店<img src="../images/index4s.png"/ style="left: 214px;"></th>
+					<th>宠物医院<img src="../images/index4s.png"/ style="left: 282px;display: block;"></th>
+					<th>宠物商城<img src="../images/index4s.png"/ style="left: 348px;"></th>
+					<th>萌宠学堂<img src="../images/index4s.png"/ style="left: 414px;"></th>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="div3"><!-- 内容部分 -->
+			<div id="div3-1">
+				<div class="div3-1-1" id="small">
+					<img src="../images/宠物医院/u3078.png" >
+					<div id="mark"></div>
+				</div>
+				<div id="big"><!-- 放大镜 -->
+					<img src="" alt=""/>
+				</div>
+				<div class="div3-1-2">
+					<div class="alefts"><img src="images/u842.png" ></div>
+					<div class="aImgs"><img src="../images/宠物医院/u3078.png" ></div>
+					<div class="aImgs"><img src="../images/宠物医院/u3050.png" ></div>
+					<div class="aImgs"><img src="../images/宠物医院/u3052.png" ></div>
+					<div class="aImgs"><img src="../images/宠物医院/u3046.png" ></div>
+					<div class="arights"><img src="images/u847.png" ></div>
+				</div>
+			</div>
+			<div id="div3-2">
+				<h2>宠物体检</h2>
+				<p>专业人员，全程消毒环境</p>
+				<div class="div3-2-1">
+					<span>市场价：￥<del>1999.00</del></span>
+					<span>尹宠萌：￥<a style="font-size: 25px;color: red;">500.00</a></span>
+				</div>
+				<a>已售：2323</a>
+				<div class="div-3-2-2">
+					<div style="float: left;margin-top: 3px;color: #666666;font-size: 14px;">规格：</div>
+					<div class="label_box">
+						<label>
+							<input type="radio" name="sex" id="" value="" />
+							<div>无</div>
+						</label>
+					</div>
+					<div style="float: left; margin-top: 3px;clear: left;color: #666666;font-size: 14px;">数量：</div>
+					<div class="box-up">
+						<div>-</div>
+						<input type="tel" name="" id="" value="1" />
+						<div>+</div>
+					</div>
+					<div class="Selct">门店选择：<select name="">
+						<option value="请选择">请选择</option>
+						<option value="">长沙市芙蓉区王府花园路131号</option>
+						<option value="">步步高梅溪新天地萌宠街-梅西百货G层P11停车场入口处</option>
+						<option value="">湖南省长沙市雨花区砂子塘街道韶山中路713号</option>
+						<option value="">长沙市芙蓉区王府花园路231号</option>
+						<option value="">湖南省长沙市开福区浏阳河街道珠江花城-花盛4栋112门面猧</option>
+						<option value="">湖南省 长沙市 开福区黄兴北路复地崑玉国际6栋115</option>
+						<option value="">湖南省 长沙市开福区恒大雅苑八栋113门面</option>
+						<option value="">湖南省长沙市芙蓉区马王堆街道104号铺</option>
+						<option value="">湖南省 长沙市 雨花区 洞井街道欧莱雅郡S3栋113号一犬一舍</option>
+						<option value="">湖南省 长沙市 天心区 先锋街道 中信文化广场第15栋12楼</option>
+						<option value="">湖南省 长沙市 岳麓区 梅溪湖街道梅溪湖达美美立方负119门面</option>
+						<option value="">湖南省 长沙市 芙蓉区 湘湖街道车站北路雍景园十栋105号</option>
+						<option value="">湖南省 长沙市 宁乡县 城郊乡东沩南路68号宠来宠趣护理SPA生活馆</option>
+					</select></div>
+				</div>
+				<button>加入购物车</button>
+			</div>
+		</div>
+		
+		<div id="div4">
+			<h2>推荐购买</h2>
+			<div id="div4-1">
+				<div><img onclick="location.assign('../宠物商城/爱诺主粮专区.html')" src="../images/banner-1-1.png" /></div>
+				<div><img onclick="location.assign('../宠物商城/哈格零食专场.html')" src="../images/banner-1-2.png" /></div>
+			</div>
+			<div id="div4-2">
+				<div><img onclick="location.assign('../宠物商城/贝帮保健护理专场.html')" src="../images/banner-1-3.png" /></div>
+				<div><img onclick="location.assign('../宠物商城/博览梳尽在瑞丝.html')" src="../images/banner-1-4.png" /></div>
+			</div>
+		</div>
+		
+		<!-- 末尾版权 -->
+		<div id="div7">
+			<div id="div7-1">
+				<div id="div7-1-1">
+					<p>客服热线</p>
+					<div><img src="../images/u209.png" style="width: 25px;padding: 5px;" />
+						<h2 style="float: right;margin-right: 220px;">400-888-888</h2>
+					</div>
+					<p>周一至周日 09:00-22:00</p>
+					<p>地址：长沙市雨花区</p>
+					<p>邮箱：888888888@qq.com</p>
+					<input type="button" value="在线咨询" />
+				</div>
+			</div>
+			<div id="div7-2">版权所有：@INpasdsadasdasd</div>
+		</div>
+		<!-- 加入购入车弹出框 -->
+		<div id="shade"><!-- 遮罩层 -->
+			<div><!-- //弹出框 -->
+				<img id="btnoff" src="images/u1110.png" >
+				<div class="shade-1">
+					<img src="images/u1094.gif" >
+					<p>恭喜铲屎官，成功添加到购物车咯~</p>
+					<input type="button" name="" id="" value="立即结算" />
+					<input type="button" name="" id="" value="继续购物" />
+				</div>
+				<div class="shade-2">
+					<p>购买过该商品的人还买过</p>
+					<div>
+						<div><img onclick="location.assign('../宠物商城/爱诺主粮专区.html')" src="../images/banner-1-1.png" /></div>
+						<div><img onclick="location.assign('../宠物商城/哈格零食专场.html')" src="../images/banner-1-2.png" /></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>关于店铺</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			/* y右侧信息导航 */
+			#fixedField{width: 40px;height: 100%;background-color: #444444;position: fixed;z-index: 100;right: 0;}
+			#fixedField img{width: 28px;}
+			#fixedField>a{color: #DF8225; width: 20px;height: 100px;display: block;margin-top: 20px;margin-left: 10px;list-style-type: none;text-decoration:none}
+			.fixedField_1{cursor: default;width: 40px;font-size: 14px;font-weight: 200; height: 100px;text-align: center;background-color: #444444;color: aliceblue;  position: relative; top: 55px;margin-bottom: 50px;padding-top: 18px;}
+			.fixedField_1>div{cursor: default;color: #FFFFFF;font-size: 14px;  position: absolute;width: 150px;height: 35px;line-height: 35px; background-color: #444444;border-radius: 3%; vertical-align: middle;top: 40px; left: -150px;display: none;}
+			.fixedField_1>div>a{color: #DF8225;cursor: default}
+			.fixedField_1:hover{background-color: #7a7a7a;}
+			/* 导航栏 */
+			#div1 {
+				position: absolute;
+				width: 1520px;
+				height: 5px;
+				top: 0px;
+			}
+
+			#div1 table {
+				position: absolute;
+				border-collapse: collapse;
+				top: 22px;
+				font-size: 14px;
+				left: 600px;
+				color: aliceblue;
+			}
+
+			#div1 table tr th {
+				padding: 5px;
+				cursor: default;
+			}
+
+			#div1 img {
+				position: absolute;
+				left: 510px;
+				top: 12px;
+			}
+
+			#div1 table tr img {
+				position: relative;
+				left: 15px;
+				top: 0px;
+			}
+
+			#div1 table tr th img {
+				position: absolute;
+				top: 28px;
+				display: none;
+			}
+
+			#div2 {
+				width: 1520px;
+				height: 400px;
+				position: relative;
+				overflow: hidden;
+			}
+
+			#div2 img {
+				width: 100%;
+				height: 100%;
+			}
+
+			.adivs {
+				width: 1200px;
+				margin: 0 auto;
+			}
+
+			.adivs>h2 {
+				text-align: center;
+				font-size: 40px;
+				padding: 30px;
+			}
+
+			.adivs>p {
+				text-align: center;
+				padding: 40px;
+				font-size: 25px;
+				line-height: 50px;
+			}
+
+			#div3 {
+				position: relative;
+				margin-top: 20px;
+			}
+
+			#div3 img {
+				width: 550px;
+				margin-top: 20px;
+			}
+
+			#div3>p {
+				width: 500px;
+				position: absolute;
+				top: 100px;
+				left: 600px;
+				font-size: 18px;
+				text-align: left;
+			}
+
+			#div3-1 {
+				width: 1200px;
+				height: 300px;
+			}
+
+			#div3-1 div {
+				float: left;
+				width: 31%;
+				height: 280px;
+				padding-right: 20px;
+			}
+
+			#div3-1 img {
+				width: 100%;
+				height: 100%;
+			}
+
+			#div3-2 div {
+				float: left;
+				width: 31%;
+				height: 280px;
+				padding-right: 20px;
+			}
+
+			#div3-2 img {
+				width: 100%;
+				height: 100%;
+			}
+
+			#div3 img:hover {
+				height: 260px;
+				transition: 0.3s;
+			}
+
+			#div4 {
+				position: relative;
+			}
+
+			#div4 h2 {
+				margin-top: 330px;
+			}
+
+			#div4 p {
+				margin-top: -40px
+			}
+
+			#div4 button {
+				margin-left: 40px;
+				width: 160px;
+				height: 32px;
+				border: none;
+				font-size: 16px;
+				outline: none;
+			}
+
+			.action {
+				background-color: #FFD70A;
+				color: #FFFFFF;
+			}
+
+			#div4-1 {
+				margin-top: 10px;
+			}
+
+			#div4-1>div div {
+				float: left;
+				padding: 20px;
+				width: 260px;
+				height: 190px;
+				
+			}
+
+			#div4-2>div div {
+				float: left;
+				padding: 20px;
+				width: 260px;
+				height: 190px;
+				
+			}
+
+			#div4-3>div div {
+				float: left;
+				padding: 20px;
+				width: 260px;
+				height: 190px;
+				
+			}
+
+			#div4 img {
+				width: 100%;
+				height: 100%;
+			}
+
+			#div4 img:hover {
+				height: 180px;
+				transition: 0.5s;
+			}
+			
+			#div5{margin-top: 700px;}
+			#div5 div{float: left;width: 560px;height: 400px;margin-right: 40px;margin-top: 40px;}
+			#div5 img{width: 100%; height: 100%;}
+			
+			/* 末尾版权 */
+			#div7{width: 1520px;height: 300px;background-color: #333333;}
+			#div7-1{background-color: #333333;width: 100%;height:260px ;margin-top: 950px;}/* 修改版权栏距离内容距离 */
+			#div7-2{background-color: #292929;width: 100%;height: 40px; color: #FFFFFF;font-size: 13px;text-align: center;line-height: 40px;}
+			#div7-1-1{margin: 0px auto;margin-left: 660px; width: 400px;color: #999999; font-size: 14px;text-align: left;padding:15px ;}
+			#div7-1-1 p{padding: 10px;}
+			#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18px;width: 110px;height: 37px;border-radius: 30px;}
+		</style>
+		<script src="./js/jQuery-3.4.1.js"></script>
+		<script>
+			$(function() {
+				//导航栏
+				$("#th1 th").mouseover(function() {
+					$("#th1 th img").css("display", "none");
+					$("#th1 th img:eq(1)").css("display", "block");
+					$("#th1 th img").eq($("#th1 th").index(this)).css("display", "block");
+				});
+				$("#th1 th").mouseout(function() {
+					$("#th1 th img").css("display", "none");
+					$("#th1 th img:eq(1)").css("display", "block");
+				});
+				$("#th1 th").click(function() {
+					var iNdexs = $("#th1 th").index(this);
+					if (iNdexs == 0) {
+						location.assign("index.html");
+					} else if (iNdexs == 2) {
+						location.assign("店内项目.html");
+					} else if (iNdexs == 3) {
+						location.assign("附近门店.html");
+					} else if (iNdexs == 4) {
+						location.assign("宠物医院.html");
+					} else if (iNdexs == 5) {
+						location.assign("宠物商城.html");
+					} else if (iNdexs == 6) {
+						location.assign("萌宠学堂.html");
+					}
+				});
+				$(".aeImgs").eq(1).hide();
+				$(".aeImgs").eq(2).hide();
+				$("#div4>button").mouseover(function(){
+					var indeas = $(this).index() - 2;
+					$("#div4>button").attr("class","")
+					$(this).attr("class","action");
+					$(".aeImgs").hide();
+					$(".aeImgs").eq(indeas).show();
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<!-- 右侧固定个人信息导航栏 -->
+		<div id="fixedField">
+			<a href="/login" style="width: 10px; ">点击登录</a>
+			<div class="fixedField_1"><img src="images/icon_1.png">购物车
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1"><img src="images/icon_2.png">在线客服
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1"><img src="images/icon_3.png">我的订单
+				<div>未<a href="/login">登录</a>，点击登录</div>
+			</div>
+			<div class="fixedField_1">
+				<img src="images/icon_up.png">
+				<div id="topUp" style="width: 80px; height: 40px; top: 20px;left: -80px;background-color: #FFD70A;line-height: 40px;"><a
+					 href="#" style="color: #FFFFFF;">返回顶层</a></div>
+			</div>
+		</div>
+		<div id="div2">
+			<img src="./images/关于店铺/u267.jpg" />
+		</div>
+		<!-- 导航栏 -->
+		<div id="div1">
+			<table>
+				<img src="images/logo_u49.png" style="width: 80px; height: 40px;" />
+				<tr id="th1">
+					<th>网站首页<img src="./images/index4.png"/ style=""></th>
+					<th>关于店铺<img src="./images/index4.png"/ style="left: 82px;display: block;"></th>
+					<th>店内项目<img src="./images/index4.png"/ style="left: 148px;"></th>
+					<th>附近门店<img src="./images/index4.png"/ style="left: 214px;"></th>
+					<th>宠物医院<img src="./images/index4.png"/ style="left: 282px;"></th>
+					<th>宠物商城<img src="./images/index4.png"/ style="left: 348px;"></th>
+					<th>萌宠学堂<img src="./images/index4.png"/ style="left: 414px;"></th>
+				</tr>
+			</table>
+		</div>
+
+		<div class="adivs">
+			<h2>企业文化</h2>
+			<p>我们的定位:轻奢养宠，品质生活<br />我们的使命:快乐相随，宠爱一生</p>
+			<img src="images/关于店铺/u330.png" style="width: 100%;" />
+		</div>
+
+		<div class="adivs" id="div3">
+			<h2>公司简介</h2>
+			<img src="images/关于店铺/u336.png" />
+			<p>尹宠萌宠物产业发展有限公司是长沙一家专门做宠物的公司。长沙尹宠萌宠物产业发展有限公司长沙公司为宠物买家提供专业技术以及宠物健康以及用品，理论与实践并重。全方位综合性课程培训宠物买家，提供了解的习性与行为性专业辅导。全面丰富的实践教学，让每一位宠物买家在不断交流与总结中，实实在在地学到与宠物相处。</p>
+			<div id="div3-1">
+				<div><img src="images/关于店铺/index_6.jpg"></div>
+				<div><img src="images/关于店铺/u340.png"></div>
+				<div><img src="images/关于店铺/u342.png"></div>
+			</div>
+			<div id="div3-2">
+				<div><img src="images/关于店铺/u346.png"></div>
+				<div><img src="images/关于店铺/u359.png"></div>
+				<div><img src="images/关于店铺/u348.png"></div>
+			</div>
+		</div>
+
+		<div class="adivs" id="div4">
+			<h2>企业风采</h2>
+			<p>荣誉无法取代实力，但若能让你对养宠物更有信心，我们很乐意让你看到。</p>
+			<button style="margin-left: 280px;" class="actions action">门店员工合影</button>
+			<button class="actions">公司员工合影</button>
+			<button class="actions">员工培训合影</button>
+			<div id="div4-1" class="aeImgs">
+				<div>
+					<div><img src="images/关于店铺/u375.png"></div>
+					<div><img src="images/关于店铺/u342.png"></div>
+					<div><img src="images/关于店铺/u344.png"></div>
+					<div><img src="images/关于店铺/u346.png"></div>
+				</div>
+				<div>
+					<div><img src="images/关于店铺/u359.png"></div>
+					<div><img src="images/关于店铺/u361.png"></div>
+					<div><img src="images/关于店铺/u363.png"></div>
+					<div><img src="images/关于店铺/u365.png"></div>
+				</div>
+				<div>
+					<div><img src="images/关于店铺/u367.png"></div>
+					<div><img src="images/关于店铺/u369.png"></div>
+					<div><img src="images/关于店铺/u377.png"></div>
+					<div><img src="images/关于店铺/u379.png"></div>
+				</div>
+			</div>
+			<div id="div4-2" class="aeImgs">
+				<div>
+					<div><img src="images/关于店铺/u381.png"></div>
+					<div><img src="images/关于店铺/u363.png"></div>
+					<div><img src="images/关于店铺/u365.png"></div>
+					<div><img src="images/关于店铺/u344.png"></div>
+				</div>
+				<div>
+					<div><img src="images/关于店铺/u359.png"></div>
+					<div><img src="images/关于店铺/u375.png"></div>
+					<div><img src="images/关于店铺/u342.png"></div>
+					<div><img src="images/关于店铺/u377.png"></div>
+				</div>
+			</div>
+			<div id="div4-3" class="aeImgs">
+				<div>
+					<div><img src="images/关于店铺/u365.png"></div>
+					<div><img src="images/关于店铺/u359.png"></div>
+					<div><img src="images/关于店铺/u342.png"></div>
+					<div><img src="images/关于店铺/u381.png"></div>
+				</div>
+				<div>
+					<div><img src="images/关于店铺/u379.png"></div>
+					<div><img src="images/关于店铺/u361.png"></div>
+					<div><img src="images/关于店铺/u344.png"></div>
+					<div><img src="images/关于店铺/u375.png"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="adivs" id="div5">
+			<h2>关于宠物</h2>
+			<div><img src="images/关于店铺/u415.jpg"></div>
+			<div><img src="./images/关于店铺/u417.jpg"></div>
+			<div><img src="./images/关于店铺/u421.jpg"></div>
+			<div><img src="./images/关于店铺/u423.jpg"></div>
+		</div>
+		
+		<!-- 末尾版权 -->
+		<div id="div7">
+			<div id="div7-1">
+				<div id="div7-1-1">
+					<p>客服热线</p>
+					<div><img src="images/u209.png" style="width: 25px;padding: 5px;" />
+						<h2 style="float: right;margin-right: 220px;">400-888-888</h2>
+					</div>
+					<p>周一至周日 09:00-22:00</p>
+					<p>地址：长沙市雨花区</p>
+					<p>邮箱：888888888@qq.com</p>
+					<input type="button" value="在线咨询" />
+				</div>
+			</div>
+			<div id="div7-2">版权所有：@INpasdsadasdasd</div>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			//右侧信息导航栏
+			$(".fixedField_1").mouseout(function(){
+				$(this).children("div").hide();
+			})
+				$(".fixedField_1").eq(0).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") == 0){
+						location.assign('/shopping');
+					}else{
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				$(".fixedField_1").eq(1).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") != 0){
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				$(".fixedField_1").eq(2).click(function(){
+					var _this = $(this);
+					if($("#fixedField").attr("login") == 0){
+						location.assign('/Allorders');
+					}else{
+						_this.children("div").show().mouseover(function(){
+							$(this).show();
+						});
+					}
+				})
+				
+				$(".fixedField_1").eq(3).mouseover(function(){
+					$(this).children("div").show().mouseout(function(){//children获取当前元素下的自定义子代元素
+						$(this).hide();
+					});
+				}).mouseout(function(){
+						$(this).children("div").hide();
+					});
+				//右侧信息导航栏点击返回最上面
+				$("#topUp").click(function(){
+					$("html,body").animate({scrollTop:0},500);
+				});
+			$.ajax({
+				type:"post",
+				url:"/condition",
+				dataType:"json",
+				success:function(data,statusText,xhr){
+					if(data.success == 0){
+						$("#fixedField>a").html("已登录");
+						$("#fixedField").attr("login",0)
+					}else{
+						$("#fixedField>a").html("点击登录");
+					}
+				},
+				error:function(err){
+						console.log(err);
+						alert("错误")
+					}
+				})
+		})
+	</script>
+</html>
