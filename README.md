@@ -24,7 +24,7 @@
 
 ```
 # 克隆项目
-git clone https://github.com/1768941378/Pet-Mall.git
+git clone https://github.com/pezihan/Pet-Mall.git
 
 # 进入项目目录
 cd Pet-Mall
