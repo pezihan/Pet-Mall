@@ -30,6 +30,7 @@ app.use(function(req,res){
     res.send('<h1>页面丢失了</h1>');
 })
 
-app.listen(3000,function(){
+// 访问地址的配置
+app.listen(3000,function(){ 
     console.log('The pet store has been successfully launched,running 3000....')
 })
