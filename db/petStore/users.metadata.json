@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"petStore.users"}],"uuid":"9ec6c6622c7a483b9d1484989e36e4be"}

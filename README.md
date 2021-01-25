@@ -18,6 +18,8 @@
  mongod
 ```
 
+数据库导出文件在db文件夹中，mongodb数据库中创建petStore数据库，再将db中的文件使用命令导入
+
 默认访问地址为：http://localhost:3000   在app.js中可以进行配置
 
 ### 安装
