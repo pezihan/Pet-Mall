@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>宠物体检</title>
+		<script src="../js/html.js"></script>
 		<style>
 			* {
 				margin: 0;
@@ -12,58 +13,58 @@
 			/* 导航栏 */
 			#div1 {
 				position: absolute;
-				width: 1520px;
-				height: 5px;
-				top: 0px;
+				width: 1520rem;
+				height: 5rem;
+				top: 0rem;
 			}
 			
 			#div1 table {
 				position: absolute;
 				border-collapse: collapse;
-				top: 22px;
-				font-size: 14px;
-				left: 600px;
+				top: 22rem;
+				font-size: 14rem;
+				left: 600rem;
 				color: #000000;
 			}
 			
 			#div1 table tr th {
-				padding: 5px;
+				padding: 5rem;
 				cursor: default;
 			}
 			
 			#div1 img {
 				position: absolute;
-				left: 510px;
-				top: 12px;
+				left: 510rem;
+				top: 12rem;
 			}
 			
 			#div1 table tr img {
 				position: relative;
-				left: 15px;
-				top: 0px;
+				left: 15rem;
+				top: 0rem;
 			}
 			
 			#div1 table tr th img {
 				position: absolute;
-				top: 28px;
+				top: 28rem;
 				display: none;
 			}
 			
 			#div3{
-				width: 1200px;
+				width: 1200rem;
 				margin: 0 auto;
 				overflow: overlay;
-				margin-top: 140px;
+				margin-top: 140rem;
 			}
 			#div3-1{
-				width: 420px;
+				width: 420rem;
 				position: relative;
 				float: left;
 			}
 			
 			.div3-1-1{
-				width: 340px;
-				height: 300px;
+				width: 340rem;
+				height: 300rem;
 				margin: 0 auto;
 				position: relative;
 			}
@@ -72,23 +73,23 @@
 				height: 100%;
 			}/* 放大镜 */
 			#mark {
-				width: 120px;
-				height: 120px;
+				width: 120rem;
+				height: 120rem;
 				display: none;
 				background-color: #FFFFFF;
 				opacity: 0.5;
 				filter: alpha(opacity=50);
 				position: absolute;
-				left: 0px;
-				top: 0px;
+				left: 0rem;
+				top: 0rem;
 			}
 			
 			#big {
-				width: 240px;
-				height: 240px;
-				border: 1px solid #cbcbcb;
-				left: 500px;
-				top: 100px;
+				width: 240rem;
+				height: 240rem;
+				border: 1rem solid #cbcbcb;
+				left: 500rem;
+				top: 100rem;
 				position: absolute;
 				overflow: hidden;
 				display: none;
@@ -97,175 +98,175 @@
 			
 			/* overflow属性规定内容溢出元素框时发生的事情，hidden内容会被修剪，并且其余不可见 */
 			#big img {
-				width: 680px;
-				height: 600px;
+				width: 680rem;
+				height: 600rem;
 				position: absolute;
-				left: 0px;
-				top: 0px;
+				left: 0rem;
+				top: 0rem;
 			}			
 			.div3-1-2{
-				margin-top: 20px;
-				width: 420px;
-				height: 80px;
+				margin-top: 20rem;
+				width: 420rem;
+				height: 80rem;
 			}
 			.div3-1-2 img{
-				width: 80px;
-				height: 80px;
+				width: 80rem;
+				height: 80rem;
 			}
 			.alefts{
 				float: left;
-				width: 20px;
-				height: 80px;
-				border: #cccccc solid 1px;
+				width: 20rem;
+				height: 80rem;
+				border: #cccccc solid 1rem;
 				vertical-align: middle;
 			}
 			.alefts img{
-				width: 10px;
-				height: 20px;
-				margin-top: 30px;
-				margin-left: 5px;
+				width: 10rem;
+				height: 20rem;
+				margin-top: 30rem;
+				margin-left: 5rem;
 			}
 			.aImgs{
 				float: left;
-				margin: 0 5px;
-				border: #cccccc solid 1px;
-				height: 80px;
+				margin: 0 5rem;
+				border: #cccccc solid 1rem;
+				height: 80rem;
 				overflow: hidden;
-				margin-left: 7px;
+				margin-left: 7rem;
 			}
 			.arights{
 				float: right;
-				width: 20px;
-				height: 80px;
-				border: #cccccc solid 1px;
+				width: 20rem;
+				height: 80rem;
+				border: #cccccc solid 1rem;
 			}
 			.arights>img{
-				width: 10px;
-				height: 20px;
-				margin-top: 30px;
-				margin-left: 5px;
+				width: 10rem;
+				height: 20rem;
+				margin-top: 30rem;
+				margin-left: 5rem;
 			}
 			
 			
 			#div3-2{
 				float: right;
-				width: 650px;
+				width: 650rem;
 				background-color: #f8f8f8;
-				padding-left: 40px;
+				padding-left: 40rem;
 			}
 			#div3-2>h2{
-				font-size: 20px;
-				padding: 5px;
+				font-size: 20rem;
+				padding: 5rem;
 			}
 			#div3-2>p{
 				color: red;
-				font-size: 14px;
-				padding: 5px;
+				font-size: 14rem;
+				padding: 5rem;
 			}
 			#div3-2>a{
-				font-size: 14px;
+				font-size: 14rem;
 				color: #666666;
 			}
 			#div3-2>button{
-				width: 180px;
-				height: 45px;
+				width: 180rem;
+				height: 45rem;
 				border: none;
-				border-radius:6px ;
+				border-radius:6rem ;
 				background-color: #78b300;
 				color: #FFFFFF;
-				font-size: 20px;
+				font-size: 20rem;
 				outline: none;
-				margin-top: 30px;
-				margin-bottom: 10px;
+				margin-top: 30rem;
+				margin-bottom: 10rem;
 			}
 			.div3-2-1{
 				background-color: #efefef;
-				width: 600px;
+				width: 600rem;
 			}
 			.div3-2-1>span{
 				display: block;
-				margin-bottom: 10px;
-				margin-left: 10px;
-				padding: 5px;
-				font-size: 14px;
+				margin-bottom: 10rem;
+				margin-left: 10rem;
+				padding: 5rem;
+				font-size: 14rem;
 				color: #666666;
 			}
 			.div-3-2-2{
-				border-top: #cccccc 1px dotted;
-				border-bottom: #cccccc 1px dotted;
-				margin-top: 10px;
-				padding: 10px;
-				width: 600px;
+				border-top: #cccccc 1rem dotted;
+				border-bottom: #cccccc 1rem dotted;
+				margin-top: 10rem;
+				padding: 10rem;
+				width: 600rem;
 				overflow: overlay;
 			}
 			
 			/* 单选框 */
 			.label_box{
-				margin-left: 10px;
+				margin-left: 10rem;
 				float: left;
 				vertical-align: middle;
 			}
 			.label_box>label{
 				display: block;
 				float: left;
-				margin: 0 10px 10px 0;
+				margin: 0 10rem 10rem 0;
 				position: relative;
 				overflow: hidden;
 			}
 			.label_box>label>input{
 				position: absolute;
 				top: 0;
-				left: -20px;
+				left: -20rem;
 			}
 			.label_box>label>div{
-				width: 60px;
+				width: 60rem;
 				text-align: center;
-				border: #DDDDDD solid 1px;
-				height: 25px;
-				line-height: 25px;
+				border: #DDDDDD solid 1rem;
+				height: 25rem;
+				line-height: 25rem;
 				color: #666666;
 				user-select: none;
 				overflow: hidden;
 				position: relative;
 			}
 			.label_box>label>input:checked + div{
-				border: #d51917 solid 1px;
+				border: #d51917 solid 1rem;
 				color: #D51917;
 			}
 			.label_box>label>input:checked + div::after{
 				content: '';
 				display: block;
-				width: 20px;
-				height: 20px;
+				width: 20rem;
+				height: 20rem;
 				background-color: #D51917;
 				transform: skewY(-45deg);
 				position: absolute;
-				bottom: -10px;
+				bottom: -10rem;
 				right: 0;
 				z-index: 1;
 			}
 			.label_box>label>input:checked + div::before{
 				content: '';
 				display: block;
-				width: 3px;
-				height: 8px;
-				border-right: #FFFFFF solid 2px;
-				border-bottom: #FFFFFF solid 2px;
+				width: 3rem;
+				height: 8rem;
+				border-right: #FFFFFF solid 2rem;
+				border-bottom: #FFFFFF solid 2rem;
 				transform: rotate(35deg);
 				position: absolute;
-				bottom: 2px;
-				right: 4px;
+				bottom: 2rem;
+				right: 4rem;
 				z-index: 2;
 			}
 			.box-up{
-				height: 25px;
-				border: solid 1px #bfbfbf;
+				height: 25rem;
+				border: solid 1rem #bfbfbf;
 				float: left;
-				margin-left: 10px;
+				margin-left: 10rem;
 			}
 			.box-up>div{
-				width: 20px;
-				height: 25px;
+				width: 20rem;
+				height: 25rem;
 				background-color: #e8e8e8;
 				text-align: center;
 				float: left;
@@ -273,8 +274,8 @@
 			}
 			.box-up>input{
 				float: left;
-				height: 25px;
-				width: 40px;
+				height: 25rem;
+				width: 40rem;
 				outline: none;
 				border: none;
 				text-align: center;
@@ -283,18 +284,19 @@
 			.Selct{
 				float: left;
 				color: #666666;
-				font-size: 14px;
+				font-size: 14rem;
+				width: 100%;
 			}
 			.Selct>select{
-				height: 25px;
-				margin-top: 10px;
+				height: 25rem;
+				margin-top: 10rem;
 				color: #666666;
 			}
-			#div4{width: 1100px; height: 600px; margin: 10px auto;margin-top: 60px;}
-			#div4 h2{text-align: center;font-size: 30px;padding: 20px;}
-			#div4 div div img{width: 480px;}
-			#div4-1 div{float: left; padding: 20px; margin-left: 20px;}
-			#div4-2 div{float: left; padding: 20px; margin-left: 20px;}
+			#div4{width: 1100rem; height: 600rem; margin: 10rem auto;margin-top: 60rem;}
+			#div4 h2{text-align: center;font-size: 30rem;padding: 20rem;}
+			#div4 div div img{width: 480rem;}
+			#div4-1 div{float: left; padding: 20rem; margin-left: 20rem;}
+			#div4-2 div{float: left; padding: 20rem; margin-left: 20rem;}
 			
 			/* 加入购物车弹窗显示 */
 			#shade{
@@ -310,73 +312,73 @@
 			
 			#shade>div{
 				background-color: #FFFFFF;
-				width: 560px;
-				height: 380px;
-				border-radius: 10px;
+				width: 560rem;
+				height: 380rem;
+				border-radius: 10rem;
 				margin: 0 auto;
-				margin-top: 140px;
+				margin-top: 140rem;
 				position: relative;
 			}
 			#btnoff{
 				position: absolute;
-				right: 10px;
-				top: 5px;
+				right: 10rem;
+				top: 5rem;
 			}
 			.shade-1{
-				height: 180px;
-				width: 500px;
+				height: 180rem;
+				width: 500rem;
 				position: absolute;
-				top: 20px;
-				left: 20px;
+				top: 20rem;
+				left: 20rem;
 				float: left;
 			}
 			.shade-1>p{
 				float: right;
-				font-size: 17px;
+				font-size: 17rem;
 				position: absolute;
-				right: 30px;
-				top:50px;
+				right: 30rem;
+				top:50rem;
 			}
 			.shade-1 input{
 				float: right;
-				width: 100px;
-				height: 40px;
+				width: 100rem;
+				height: 40rem;
 				color: #666666;
-				border: 1px solid #7A7A7A;
-				border-radius: 6px;
-				margin-right: 45px;
-				margin-top: 100px;
+				border: 1rem solid #7A7A7A;
+				border-radius: 6rem;
+				margin-right: 45rem;
+				margin-top: 100rem;
 				outline: none;
 				background-color: #FFFFFF;
 			}
 			.shade-2{
 				position: absolute;
-				bottom: 10px;
-				left: 20px;
-				padding-top: 15px;
-				border-top: #666666 1px dotted;
+				bottom: 10rem;
+				left: 20rem;
+				padding-top: 15rem;
+				border-top: #666666 1rem dotted;
 			}
 			.shade-2>p{
-				font-size: 14px;
+				font-size: 14rem;
 				color: #666666;
-				padding-bottom: 10px;
+				padding-bottom: 10rem;
 			}
 			.shade-2>div div{
-				width: 250px;
+				width: 250rem;
 				float: left;
-				margin-right: 15px;
+				margin-right: 15rem;
 			}
 			.shade-2>div div img{
 				width: 100%;
 				height: 100%;
 			}
 			/* 末尾版权 */
-			#div7{width: 1520px;height: 300px;background-color: #333333;margin-top: 60px;}
-			#div7-1{background-color: #333333;width: 100%;height:260px ;}
-			#div7-2{background-color: #292929;width: 100%;height: 40px; color: #FFFFFF;font-size: 13px;text-align: center;line-height: 40px;}
-			#div7-1-1{margin: 0px auto;margin-left: 660px; width: 400px;color: #999999; font-size: 14px;text-align: left;padding:15px ;}
-			#div7-1-1 p{padding: 10px;}
-			#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18px;width: 110px;height: 37px;border-radius: 30px;}
+			#div7{width: 1520rem;height: 300rem;background-color: #333333;margin-top: 60rem;}
+			#div7-1{background-color: #333333;width: 100%;height:260rem ;}
+			#div7-2{background-color: #292929;width: 100%;height: 40rem; color: #FFFFFF;font-size: 13rem;text-align: center;line-height: 40rem;}
+			#div7-1-1{margin: 0rem auto;margin-left: 660rem; width: 400rem;color: #999999; font-size: 14rem;text-align: left;padding:15rem ;}
+			#div7-1-1 p{padding: 10rem;}
+			#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18rem;width: 110rem;height: 37rem;border-radius: 30rem;}
 		</style>
 		<script src="../js/jQuery-3.4.1.js"></script>
 		<script>
@@ -544,15 +546,15 @@
 		<!-- 导航栏 -->
 		<div id="div1">
 			<table>
-				<img src="../images/logo_u49.png" style="width: 80px; height: 40px;" />
+				<img src="../images/logo_u49.png" style="width: 80rem; height: 40rem;" />
 				<tr id="th1">
 					<th>网站首页<img src="../images/index4s.png"/ style=""></th>
-					<th>关于店铺<img src="../images/index4s.png"/ style="left: 82px;"></th>
-					<th>店内项目<img src="../images/index4s.png"/ style="left: 148px;"></th>
-					<th>附近门店<img src="../images/index4s.png"/ style="left: 214px;"></th>
-					<th>宠物医院<img src="../images/index4s.png"/ style="left: 282px;display: block;"></th>
-					<th>宠物商城<img src="../images/index4s.png"/ style="left: 348px;"></th>
-					<th>萌宠学堂<img src="../images/index4s.png"/ style="left: 414px;"></th>
+					<th>关于店铺<img src="../images/index4s.png"/ style="left: 82rem;"></th>
+					<th>店内项目<img src="../images/index4s.png"/ style="left: 148rem;"></th>
+					<th>附近门店<img src="../images/index4s.png"/ style="left: 214rem;"></th>
+					<th>宠物医院<img src="../images/index4s.png"/ style="left: 282rem;display: block;"></th>
+					<th>宠物商城<img src="../images/index4s.png"/ style="left: 348rem;"></th>
+					<th>萌宠学堂<img src="../images/index4s.png"/ style="left: 414rem;"></th>
 				</tr>
 			</table>
 		</div>
@@ -580,18 +582,18 @@
 				<p>专业人员，全程消毒环境</p>
 				<div class="div3-2-1">
 					<span>市场价：￥<del>1999.00</del></span>
-					<span>尹宠萌：￥<a style="font-size: 25px;color: red;">500.00</a></span>
+					<span>尹宠萌：￥<a style="font-size: 25rem;color: red;">500.00</a></span>
 				</div>
 				<a>已售：2323</a>
 				<div class="div-3-2-2">
-					<div style="float: left;margin-top: 3px;color: #666666;font-size: 14px;">规格：</div>
+					<div style="float: left;margin-top: 3rem;color: #666666;font-size: 14rem;">规格：</div>
 					<div class="label_box">
 						<label>
 							<input type="radio" name="sex" id="" value="" />
 							<div>无</div>
 						</label>
 					</div>
-					<div style="float: left; margin-top: 3px;clear: left;color: #666666;font-size: 14px;">数量：</div>
+					<div style="float: left; margin-top: 3rem;clear: left;color: #666666;font-size: 14rem;">数量：</div>
 					<div class="box-up">
 						<div>-</div>
 						<input type="tel" name="" id="" value="1" />
@@ -635,8 +637,8 @@
 			<div id="div7-1">
 				<div id="div7-1-1">
 					<p>客服热线</p>
-					<div><img src="../images/u209.png" style="width: 25px;padding: 5px;" />
-						<h2 style="float: right;margin-right: 220px;">400-888-888</h2>
+					<div><img src="../images/u209.png" style="width: 25rem;padding: 5rem;" />
+						<h2 style="float: right;margin-right: 220rem;">400-888-888</h2>
 					</div>
 					<p>周一至周日 09:00-22:00</p>
 					<p>地址：长沙市雨花区</p>

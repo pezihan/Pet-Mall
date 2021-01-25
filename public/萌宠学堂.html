@@ -3,61 +3,62 @@
 	<head>
 		<meta charset="utf-8">
 		<title>宠物商城</title>
+		<script src="./js/html.js"></script>
 		<style>
 			* {
 				margin: 0;
 				padding: 0;
 			}
 			/* y右侧信息导航 */
-			#fixedField{width: 40px;height: 100%;background-color: #444444;position: fixed;z-index: 100;right: 0;}
-			#fixedField img{width: 28px;}
-			#fixedField>a{color: #DF8225; width: 20px;height: 100px;display: block;margin-top: 20px;margin-left: 10px;list-style-type: none;text-decoration:none}
-			.fixedField_1{cursor: default;width: 40px;font-size: 14px;font-weight: 200; height: 100px;text-align: center;background-color: #444444;color: aliceblue;  position: relative; top: 55px;margin-bottom: 50px;padding-top: 18px;}
-			.fixedField_1>div{cursor: default;color: #FFFFFF;font-size: 14px;  position: absolute;width: 150px;height: 35px;line-height: 35px; background-color: #444444;border-radius: 3%; vertical-align: middle;top: 40px; left: -150px;display: none;}
+			#fixedField{width: 40rem;height: 100%;background-color: #444444;position: fixed;z-index: 100;right: 0; font-size: 14rem;}
+			#fixedField img{width: 28rem;}
+			#fixedField>a{color: #DF8225; width: 20rem;height: 100rem;display: block;margin-top: 20rem;margin-left: 10rem;list-style-type: none;text-decoration:none}
+			.fixedField_1{cursor: default;width: 40rem;font-size: 14rem;font-weight: 200; height: 100rem;text-align: center;background-color: #444444;color: aliceblue;  position: relative; top: 55rem;margin-bottom: 50rem;padding-top: 18rem;}
+			.fixedField_1>div{cursor: default;color: #FFFFFF;font-size: 14rem;  position: absolute;width: 150rem;height: 35rem;line-height: 35rem; background-color: #444444;border-radius: 3%; vertical-align: middle;top: 40rem; left: -150rem;display: none;}
 			.fixedField_1>div>a{color: #DF8225;cursor: default}
 			.fixedField_1:hover{background-color: #7a7a7a;}
 			/* 导航栏 */
 			#div1 {
 				position: absolute;
-				width: 1520px;
-				height: 5px;
-				top: 0px;
+				width: 1520rem;
+				height: 5rem;
+				top: 0rem;
 			}
 			
 			#div1 table {
 				position: absolute;
 				border-collapse: collapse;
-				top: 22px;
-				font-size: 14px;
-				left: 600px;
+				top: 22rem;
+				font-size: 14rem;
+				left: 600rem;
 				color: aliceblue;
 			}
 			
 			#div1 table tr th {
-				padding: 5px;
+				padding: 5rem;
 				cursor: default;
 			}
 			
 			#div1 img {
 				position: absolute;
-				left: 510px;
-				top: 12px;
+				left: 510rem;
+				top: 12rem;
 			}
 			
 			#div1 table tr img {
 				position: relative;
-				left: 15px;
-				top: 0px;
+				left: 15rem;
+				top: 0rem;
 			}
 			
 			#div1 table tr th img {
 				position: absolute;
-				top: 28px;
+				top: 28rem;
 				display: none;
 			}
 			#div2 {
-				width: 1520px;
-				height: 400px;
+				width: 1520rem;
+				height: 400rem;
 				position: relative;
 				overflow: hidden;
 			}
@@ -68,83 +69,85 @@
 			}
 			#oh2{
 				text-align: center;
-				line-height: 100px;
+				line-height: 100rem;
+				font-size: 20rem;
 			}
 			.maxdiv{
-				width: 1000px;
+				width: 1000rem;
 				margin: 0 auto;
 				overflow: overlay;//随里面的内容自动获取高度
 			}
 			.mindiv{
 				float: left;
-				margin: 10px ;
-				height: 260px;
+				margin: 10rem ;
+				height: 260rem;
 				background-color: #F1F1F1;
-				border-radius: 5px;
+				border-radius: 5rem;
 				overflow: hidden;
 			}
 			.mindiv img{
-				width: 230px;
-				height: 180px;
+				width: 230rem;
+				height: 180rem;
 			}
 			.mindiv a{
-				width: 180px;
-				height: 30px;
+				width: 180rem;
+				height: 30rem;
 				display: block;
-				font-size: 12px;
+				font-size: 12rem;
 				margin: 0 auto;
-				margin-bottom: 6px;
+				margin-bottom: 6rem;
 				text-overflow: ellipsis;
 				cursor: default;
 			}
 			.mindiv div{
 				background-color: #FECB02;
-				width: 180px;
-				height: 1px;
-				margin: 10px auto;
+				width: 180rem;
+				height: 1rem;
+				margin: 10rem auto;
 			}
 			.mindiv p{
-				font-size: 12px;
+				font-size: 12rem;
 				float: right;
-				margin-right: 20px;
+				margin-right: 20rem;
 			}
 			#btn{
 				width: 100%;
-				height: 32px;
+				height: 32rem;
 				margin: 0 auto;
-				margin-top: 30px;
+				margin-top: 30rem;
 				display: inline-block;
 				text-align: center;
 			}
 			#btn button{
-				height: 32px;
-				width: 80px;
-				border-radius: 4px;
+				height: 32rem;
+				width: 80rem;
+				border-radius: 4rem;
 				background-color: #FFCF10;
 				border: none;
 				color: #FFFFFF;
-				font-size: 20px;
+				font-size: 20rem;
 				outline: none;
-				margin-left: 10px;
-				margin-right: 10px;
+				margin-left: 10rem;
+				margin-right: 10rem;
 			}
 			#btn div{
 				display: inline-block;
-				border:#FFCF10 1px solid ;
-				width: 22px;
-				height: 22px;
-				line-height: 22px;
+				border:#FFCF10 1rem solid ;
+				width: 22rem;
+				height: 22rem;
+				line-height: 22rem;
 				text-align: center;
 				cursor: default;
+				font-size: 14rem;
 			}
 			
 			/* 末尾版权 */
-			#div7{width: 1520px;height: 300px;background-color: #333333;}
-			#div7-1{background-color: #333333;width: 100%;height:260px ;margin-top: 100px;}/* 修改版权栏距离内容距离 */
-			#div7-2{background-color: #292929;width: 100%;height: 40px; color: #FFFFFF;font-size: 13px;text-align: center;line-height: 40px;}
-			#div7-1-1{margin: 0px auto;margin-left: 660px; width: 400px;color: #999999; font-size: 14px;text-align: left;padding:15px ;}
-			#div7-1-1 p{padding: 10px;}
-			#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18px;width: 110px;height: 37px;border-radius: 30px;}
+			#div7{width: 1520rem;height: 300rem;background-color: #333333;}
+			#div7-1{background-color: #333333;width: 100%;height:260rem ;margin-top: 100rem;}/* 修改版权栏距离内容距离 */
+			#div7-2{background-color: #292929;width: 100%;height: 40rem; color: #FFFFFF;font-size: 13rem;text-align: center;line-height: 40rem;}
+			#div7-1-1{margin: 0rem auto;margin-left: 660rem; width: 400rem;color: #999999; font-size: 14rem;text-align: left;padding:15rem ;}
+			#div7-1-1 p{padding: 10rem;}
+			#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18rem;width: 110rem;height: 37rem;border-radius: 30rem;}
 		</style>
 		<script src="js/jQuery-3.4.1.js"></script>
 		<script>
@@ -205,7 +208,7 @@
 	<body>
 		<!-- 右侧固定个人信息导航栏 -->
 		<div id="fixedField">
-			<a href="/login" style="width: 10px; ">点击登录</a>
+			<a href="/login" style="width: 10rem; ">点击登录</a>
 			<div class="fixedField_1"><img src="images/icon_1.png">购物车
 				<div>未<a href="/login">登录</a>，点击登录</div>
 			</div>
@@ -217,7 +220,7 @@
 			</div>
 			<div class="fixedField_1">
 				<img src="images/icon_up.png">
-				<div id="topUp" style="width: 80px; height: 40px; top: 20px;left: -80px;background-color: #FFD70A;line-height: 40px;"><a
+				<div id="topUp" style="width: 80rem; height: 40rem; top: 20rem;left: -80rem;background-color: #FFD70A;line-height: 40rem;"><a
 					 href="#" style="color: #FFFFFF;">返回顶层</a></div>
 			</div>
 		</div>
@@ -227,15 +230,15 @@
 		<!-- 导航栏 -->
 		<div id="div1">
 			<table>
-				<img src="images/logo_u49.png" style="width: 80px; height: 40px;" />
+				<img src="images/logo_u49.png" style="width: 80rem; height: 40rem;" />
 				<tr id="th1">
 					<th>网站首页<img src="./images/index4.png"/ style=""></th>
-					<th>关于店铺<img src="./images/index4.png"/ style="left: 82px;"></th>
-					<th>店内项目<img src="./images/index4.png"/ style="left: 148px;"></th>
-					<th>附近门店<img src="./images/index4.png"/ style="left: 214px;"></th>
-					<th>宠物医院<img src="./images/index4.png"/ style="left: 282px;"></th>
-					<th>宠物商城<img src="./images/index4.png"/ style="left: 348px;"></th>
-					<th>萌宠学堂<img src="./images/index4.png"/ style="left: 414px;display: block;"></th>
+					<th>关于店铺<img src="./images/index4.png"/ style="left: 82rem;"></th>
+					<th>店内项目<img src="./images/index4.png"/ style="left: 148rem;"></th>
+					<th>附近门店<img src="./images/index4.png"/ style="left: 214rem;"></th>
+					<th>宠物医院<img src="./images/index4.png"/ style="left: 282rem;"></th>
+					<th>宠物商城<img src="./images/index4.png"/ style="left: 348rem;"></th>
+					<th>萌宠学堂<img src="./images/index4.png"/ style="left: 414rem;display: block;"></th>
 				</tr>
 			</table>
 		</div>
@@ -360,8 +363,8 @@
 			<div id="div7-1">
 				<div id="div7-1-1">
 					<p>客服热线</p>
-					<div><img src="images/u209.png" style="width: 25px;padding: 5px;" />
-						<h2 style="float: right;margin-right: 220px;">400-888-888</h2>
+					<div><img src="images/u209.png" style="width: 25rem;padding: 5rem;" />
+						<h2 style="float: right;margin-right: 220rem;">400-888-888</h2>
 					</div>
 					<p>周一至周日 09:00-22:00</p>
 					<p>地址：长沙市雨花区</p>

@@ -3,72 +3,76 @@
 	<head>
 		<meta charset="utf-8">
 		<title>首页</title>
+		<script src="./js/html.js"></script>
 		<style>
-			*{margin: 0px;padding: 0px;}
+			*{margin: 0rem;padding: 0rem;font-size: 14rem;}
 			/* y右侧信息导航 */
-			#fixedField{width: 40px;height: 100%;background-color: #444444;position: fixed;z-index: 100;right: 0;}
-			#fixedField img{width: 28px;}
-			#fixedField>a{color: #DF8225; width: 20px;height: 100px;display: block;margin-top: 20px;margin-left: 10px;list-style-type: none;text-decoration:none}
-			.fixedField_1{cursor: default;width: 40px;font-size: 14px;font-weight: 200; height: 100px;text-align: center;background-color: #444444;color: aliceblue;  position: relative; top: 55px;margin-bottom: 50px;padding-top: 18px;}
-			.fixedField_1>div{cursor: default;color: #FFFFFF;font-size: 14px;  position: absolute;width: 150px;height: 35px;line-height: 35px; background-color: #444444;border-radius: 3%; vertical-align: middle;top: 40px; left: -150px;display: none;}
+			#fixedField{width: 40rem;height: 100%;background-color: #444444;position: fixed;z-index: 100;right: 0;}
+			#fixedField img{width: 28rem;}
+			#fixedField>a{color: #DF8225; width: 20rem;height: 100rem;display: block;margin-top: 20rem;margin-left: 10rem;list-style-type: none;text-decoration:none}
+			.fixedField_1{cursor: default;width: 40rem;font-size: 14rem;font-weight: 200; height: 100rem;text-align: center;background-color: #444444;color: aliceblue;  position: relative; top: 55rem;margin-bottom: 50rem;padding-top: 18rem;}
+			.fixedField_1>div{cursor: default;color: #FFFFFF;font-size: 14rem;  position: absolute;width: 150rem;height: 35rem;line-height: 35rem; background-color: #444444;border-radius: 3%; vertical-align: middle;top: 40rem; left: -150rem;display: none;}
 			.fixedField_1>div>a{color: #DF8225;cursor: default}
 			.fixedField_1:hover{background-color: #7a7a7a;}
 			
 			
 			/* 轮播图 */
-			#ul2 li{width: 1520px; height:800px ; list-style: none;float: left;}
+			#ul2 li{width: 1520rem; height:800rem ; list-style: none;float: left;}
 			#ul2 li img{width: 100%;height: 100%;}
-			#ul2{position: absolute;left: 0px;width: 4560px;}
-			#div2{width: 1520px; height: 800px; position: relative;overflow: hidden;}
-			#img1{position:absolute; width: 55px;height: 65px; top: 350px; left: 170px; background-color: rgba(0,0,0,0.5);border-radius: 10px;}
-			#img2{position: absolute; width: 60px;height: 65px; top: 350px; left: 1300px; background-color: rgba(0,0,0,0.5);border-radius: 10px;}
-			#img1 img{width: 20px; height: 50px; margin-top: 8px;margin-left: 12px;}
-			#img2 img{width: 20px%; height: 50px; margin-top: 8px;margin-left: 18px;}
+			#ul2{position: absolute;left: 0rem;width: 4560rem;}
+			#div2{width: 1520rem; height: 800rem; position: relative;overflow: hidden;}
+			#img1{position:absolute; width: 55rem;height: 65rem; top: 350rem; left: 170rem; background-color: rgba(0,0,0,0.5);border-radius: 10rem;}
+			#img2{position: absolute; width: 60rem;height: 65rem; top: 350rem; left: 1300rem; background-color: rgba(0,0,0,0.5);border-radius: 10rem;}
+			#img1 img{width: 20rem; height: 50rem; margin-top: 8rem;margin-left: 12rem;}
+			#img2 img{width: 20rem%; height: 50rem; margin-top: 8rem;margin-left: 18rem;}
 			
 			/* 导航栏 */
-			#div1{position: absolute;width: 1520px; height:5px; top: 0px;}
-			#div1 table{position: absolute; border-collapse: collapse; top: 22px; font-size: 14px;left: 600px;color: aliceblue;}
-			#div1 table tr th{padding: 5px;cursor: default;}
-			#div1 img{position:absolute;left:510px;top: 12px;}
-			#div1 table tr img{position: relative;left: 15px;top: 0px;}
-			#div1 table tr th img{position: absolute;top: 28px;display: none;}
+			#div1{position: absolute;width: 1520rem; height:5rem; top: 0rem;}
+			#div1 table{position: absolute; border-collapse: collapse; top: 22rem; font-size: 14rem;left: 600rem;color: aliceblue;}
+			#div1 table tr th{padding: 5rem;cursor: default;}
+			#div1 img{position:absolute;left:510rem;top: 12rem;}
+			#div1 table tr img{position: relative;left: 15rem;top: 0rem;}
+			#div1 table tr th img{position: absolute;top: 28rem;display: none;}
 			
-			#div3{width: 1100px; height: 600px; margin: 10px auto;}
-			#div3 h1{text-align: center;font-size: 45px;padding: 20px;}
-			#div3 div div img{width: 480px;}
-			#div3-1 div{float: left; padding: 20px; margin-left: 20px;}
-			#div3-2 div{float: left; padding: 20px; margin-left: 20px;}
+			#div3{width: 1100rem; height: 600rem; margin: 10rem auto;}
+			#div3 h1{text-align: center;font-size: 45rem;padding: 20rem;}
+			#div3 div div img{width: 480rem;}
+			#div3-1 div{float: left; padding: 20rem; margin-left: 20rem;}
+			#div3-2 div{float: left; padding: 20rem; margin-left: 20rem;}
 			
-			#div4-1{width: 180px; height: 340px;background-color: #ffd70a; border-radius: 10px ; position: absolute;top: 220px; left: 280px;}
-			#div4-1 div{background-color: #ffaa00;width: 180px;height: 38px;margin-bottom: 22px;font-size: 22px; color: #ffffff;text-align: center;padding-top: 5px;margin-top: 65px;}
+			#div4-1{width: 180rem; height: 340rem;background-color: #ffd70a; border-radius: 10rem ; position: absolute;top: 220rem; left: 280rem;}
+			#div4-1 div{background-color: #ffaa00;width: 180rem;height: 38rem;margin-bottom: 22rem;font-size: 22rem; color: #ffffff;text-align: center;padding-top: 5rem;margin-top: 65rem;}
 			
 			
-			#div4-2{width: 700px; height: 380px; background-color: #ffd70a;border-radius: 10px; position: absolute;left: 520px;top: 180px;}
-			#div4-2-1{width: 450px;height: 330px;position: absolute;top: 25px; left: 25px;overflow: hidden;}
-			#div4-2-1 ul{width: 900px; height: 330px; top: 0px; left: 0px;}
-			#div4-2-1 ul li{width: 450px;height: 330px;float: left;list-style: none;border: none;}
+			#div4-2{width: 700rem; height: 380rem; background-color: #ffd70a;border-radius: 10rem; position: absolute;left: 520rem;top: 180rem;}
+			#div4-2-1{width: 450rem;height: 330rem;position: absolute;top: 25rem; left: 25rem;overflow: hidden;}
+			#div4-2-1 ul{width: 900rem; height: 330rem; top: 0rem; left: 0rem;}
+			#div4-2-1 ul li{width: 450rem;height: 330rem;float: left;list-style: none;border: none;}
 			#div4-2-1 ul li img{width: 100%; height: 100%;}
-			#div4-2>img{width: 200px; position: absolute; left: 550px; top: 100px;}
-			#div4-2>h2{float: right;color: #FFFFFF;font-size: 21px;margin-right: 110px; margin-top: 40px;}
-			#div4-2>p{float: right;clear: right;color: #FFFFFF;width: 200px;text-align: left;margin-top: 16px;}
+			#div4-2>img{width: 200rem; position: absolute; left: 550rem; top: 100rem;}
+			#div4-2>h2{float: right;color: #FFFFFF;font-size: 21rem;margin-right: 110rem; margin-top: 40rem;}
+			#div4-2>p{float: right;clear: right;color: #FFFFFF;width: 200rem;text-align: left;margin-top: 16rem;}
 			
-			#div5{width: 1000px; height: 600px; margin: 100px auto; position: relative;overflow: hidden;}
-			#div5>img{width: 400px;position: absolute;left: 600px;}
-			#div5 .aiCons{position: absolute;top: 400px;}
-			#div5-1 p,h2{width: 140px; text-align: center;padding-bottom: 20px;color: #FFFFFF;}
+			#div5{width: 1000rem; height: 600rem; margin: 100rem auto; position: relative;overflow: hidden;}
+			#div5>img{width: 400rem;position: absolute;left: 600rem;}
+			#div5 .aiCons{position: absolute;top: 400rem; }
+			#div5-1 p,h2{width: 120rem; text-align: center;padding-bottom: 20rem;color: #FFFFFF;}
 			#div5-1 div{float: left;}
+			#div5-1 div>img:nth-child(1){width: 180rem;}
 			#div5-1 .oSpans{display: none;}
 			
-			#div6{width: 1520px;height:920px ;position: relative;}
+			#div6{width: 1520rem;height:920rem ;position: relative;}
 			#div6>img{width: 100%;height: 100%;}
-			#div6>h2{position: absolute;font-size: 50px;width: 400px;top: 70px;left: 560px;}
-			#div6-1{width: 1100px;height: 600px;margin: 200px auto;position: absolute;top: 20px;left: 240px;}
-			#div6-1-1>div{float: left;margin: 20px;width: 300px;height: 230px;overflow: hidden;position: relative;border-radius: 5%;}
-			#div6-1-2>div{float: left;margin: 20px;width: 300px;height: 230px;overflow: hidden;position: relative;border-radius: 5%;}
-			#div6-1 h2{position: absolute;background-color: rgba(241, 193, 19, 0.6);width: 300px;height: 30px;top: 180px;left: 0px;text-align: center;line-height: 50px;font-size: 18px;}
-			.intro{width: 320px;height: 320px;border-radius: 50%;background-color: rgba(241, 193, 19, 0.6);position: absolute;left: -10px;top: 300px;}
-			.intro h3{text-align: center;margin-top: 20px;}
-			.intro p{width: 200px;text-align: center;margin-left: 60px;margin-top: 10px;}
+			#div6>h2{position: absolute;font-size: 50rem;width: 400rem;top: 70rem;left: 560rem;}
+			#div6-1{width: 1100rem;height: 600rem;margin: 200rem auto;position: absolute;top: 20rem;left: 240rem;}
+			#div6-1-1>div{float: left;margin: 20rem;width: 300rem;height: 230rem;overflow: hidden;position: relative;border-radius: 5%;}
+			#div6-1-1>div>img {width: 100%;}
+			#div6-1-2>div{float: left;margin: 20rem;width: 300rem;height: 230rem;overflow: hidden;position: relative;border-radius: 5%;}
+			#div6-1-2>div>img {width: 100%;}
+			#div6-1 h2{position: absolute;background-color: rgba(241, 193, 19, 0.6);width: 300rem;height: 30rem;top: 180rem;left: 0rem;text-align: center;line-height: 50rem;font-size: 18rem;}
+			.intro{width: 320rem;height: 320rem;border-radius: 50%;background-color: rgba(241, 193, 19, 0.6);position: absolute;left: -10rem;top: 300rem;}
+			.intro h3{text-align: center;margin-top: 20rem;}
+			.intro p{width: 200rem;text-align: center;margin-left: 60rem;margin-top: 10rem;}
 			
 			.oImgs:hover{
 				transform: scale(1.1);  transition:  1s ; 
@@ -77,29 +81,29 @@
 				transform: scale(1.1);  transition:  1s ; 
 			}
 			/* 末尾版权 */
-			#div7{width: 1520px;height: 300px;background-color: #333333;}
-			#div7-1{background-color: #333333;width: 100%;height:260px ;}
-			#div7-2{background-color: #292929;width: 100%;height: 40px; color: #FFFFFF;font-size: 13px;text-align: center;line-height: 40px;}
-			#div7-1-1{margin: 0px auto;margin-left: 660px; width: 400px;color: #999999; font-size: 14px;text-align: left;padding:15px ;}
-			#div7-1-1 p{padding: 10px;}
-			#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18px;width: 110px;height: 37px;border-radius: 30px;}
+			#div7{width: 1520rem;height: 300rem;background-color: #333333;}
+			#div7-1{background-color: #333333;width: 100%;height:260rem ;}
+			#div7-2{background-color: #292929;width: 100%;height: 40rem; color: #FFFFFF;font-size: 13rem;text-align: center;line-height: 40rem;}
+			#div7-1-1{margin: 0rem auto;margin-left: 660rem; width: 400rem;color: #999999; font-size: 14rem;text-align: left;padding:15rem ;}
+			#div7-1-1 p{padding: 10rem;}
+			#div7-1-1 input{background-color: #FFD70A;border: none;color: #FFFFFF; font-size: 18rem;width: 110rem;height: 37rem;border-radius: 30rem;}
 		</style>
 		<script src="js/jQuery-3.4.1.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script>//jquery框架
-			$(function(){				
+			$(function(){	
 				//轮播图
-				$("#ul2").css("width",4560 * 3);
+				$("#ul2").css("width",4560 * 3 * htmlFont);
 				var IND = $("#ul2").html();
 				$("#ul2").html(IND + IND);
-				$("#ul2").css("left",-4560);
+				$("#ul2").css("left",-4560 * htmlFont);
 				
 				var timer = null;
 				function Tab(){
 					timer = setInterval(function(){
-						$("#ul2").animate({left:$("#ul2").offset().left - 1520},2000,'easeOutQuart',function(){//这利用了引入进来的jquery ui框架扩展缓冲运动
-							if($("#ul2").offset().left <= -7600){
-								$("#ul2").css("left",-3040);
+						$("#ul2").animate({left:$("#ul2").offset().left - (1520 * htmlFont)},2000,'easeOutQuart',function(){//这利用了引入进来的jquery ui框架扩展缓冲运动
+							if($("#ul2").offset().left <= -7600 * htmlFont){
+								$("#ul2").css("left",-3040 * htmlFont);
 							}
 						})
 					},4000);
@@ -114,17 +118,17 @@
 				})
 				
 				$("#img2").click(function(){
-					$("#ul2").stop(true,true).animate({left:$("#ul2").offset().left - 1520},600,'easeOutQuart',function(){//这利用了引入进来的jquery ui框架扩展缓冲运动
-						if($("#ul2").offset().left <= -7600){
-							$("#ul2").css("left",-3040);
+					$("#ul2").stop(true,true).animate({left:$("#ul2").offset().left - (1520 * htmlFont)},600,'easeOutQuart',function(){//这利用了引入进来的jquery ui框架扩展缓冲运动
+						if($("#ul2").offset().left <= -7600 * htmlFont){
+							$("#ul2").css("left",-3040 * htmlFont);
 						}
 					})
 				})
 				
 				$("#img1").click(function(){
-					$("#ul2").stop(true,true).animate({left:$("#ul2").offset().left + 1520},600,'easeOutQuart',function(){
+					$("#ul2").stop(true,true).animate({left:$("#ul2").offset().left + (1520 * htmlFont)},600,'easeOutQuart',function(){
 						if($("#ul2").offset().left >= 0){
-							$("#ul2").css("left",-4560);
+							$("#ul2").css("left",-4560 * htmlFont);
 						}
 					})
 				})
@@ -201,7 +205,7 @@
 	<body>
 		<!-- 右侧固定个人信息导航栏 -->
 		<div id="fixedField">
-			<a href="/login" style="width: 10px; ">点击登录</a>
+			<a href="/login" style="width: 10rem; ">点击登录</a>
 			<div class="fixedField_1"><img src="images/icon_1.png">购物车
 				<div>未<a href="/login">登录</a>，点击登录</div>
 			</div>
@@ -213,7 +217,7 @@
 			</div>
 			<div class="fixedField_1">
 				<img src="images/icon_up.png">
-				<div id="topUp" style="width: 80px; height: 40px; top: 20px;left: -80px;background-color: #FFD70A;line-height: 40px;"><a
+				<div id="topUp" style="width: 80rem; height: 40rem; top: 20rem;left: -80rem;background-color: #FFD70A;line-height: 40rem;"><a
 					 href="#" style="color: #FFFFFF;">返回顶层</a></div>
 			</div>
 		</div>
@@ -238,15 +242,15 @@
 				<!-- 导航栏 -->
 				<div id="div1">
 					<table>
-						<img src="images/logo_u49.png" style="width: 80px; height: 40px;" />
+						<img src="images/logo_u49.png" style="width: 80rem; height: 40rem;" />
 						<tr id="th1">
 							<th>网站首页<img src="./images/index4.png"/ style="display: block;"></th>
-							<th>关于店铺<img src="./images/index4.png"/ style="left: 82px;"></th>
-							<th>店内项目<img src="./images/index4.png"/ style="left: 148px;"></th>
-							<th>附近门店<img src="./images/index4.png"/ style="left: 214px;"></th>
-							<th>宠物医院<img src="./images/index4.png"/ style="left: 282px;"></th>
-							<th>宠物商城<img src="./images/index4.png"/ style="left: 348px;"></th>
-							<th>萌宠学堂<img src="./images/index4.png"/ style="left: 414px;"></th>
+							<th>关于店铺<img src="./images/index4.png"/ style="left: 82rem;"></th>
+							<th>店内项目<img src="./images/index4.png"/ style="left: 148rem;"></th>
+							<th>附近门店<img src="./images/index4.png"/ style="left: 214rem;"></th>
+							<th>宠物医院<img src="./images/index4.png"/ style="left: 282rem;"></th>
+							<th>宠物商城<img src="./images/index4.png"/ style="left: 348rem;"></th>
+							<th>萌宠学堂<img src="./images/index4.png"/ style="left: 414rem;"></th>
 						</tr>
 					</table>
 				</div>
@@ -262,13 +266,13 @@
 						<div><img onclick="location.assign('宠物商城/博览梳尽在瑞丝.html')" src="images/banner-1-4.png" /></div>
 					</div>
 				</div>
-				<div id="div4" style="margin-top: 80px; position: relative;">
+				<div id="div4" style="margin-top: 80rem; position: relative;">
 					<img src="images/index_4.jpg" style="width: 100%;" />
 					<div id="div4-1">
-						<img src="images/illustration1-1.png"/ style="position: absolute; top: -80px;width: 200px;">
+						<img src="images/illustration1-1.png"/ style="position: absolute; top: -80rem;width: 200rem;">
 						<div style="background-color: #FFFFFF; color: #ffd70a;">宠物门店设计</div>
-						<div style="margin-top: 0px;">宠物乐园设计</div>
-						<img src="images/logo_u49.png" / style="position: absolute; top: 220px; width: 150px; left: 18px;">
+						<div style="margin-top: 0rem;">宠物乐园设计</div>
+						<img src="images/logo_u49.png" / style="position: absolute; top: 220rem; width: 150rem; left: 18rem;">
 					</div>
 					<div id="div4-2">
 						<h2>门店展示</h2>
@@ -287,49 +291,49 @@
 					<img src="images/u180.png" />
 					<div id="div5-1">
 						<div>
-							<img src="images/6_u162.png" style="top: 102px; position: absolute; ">
-							<img src="images/6_u178.png" class="aiCons" style="left: 40px;" />
-							<div class="oSpans" style="position: absolute; top: 420px; left: 18px;">
+							<img src="images/6_u162.png" style="top: 102rem; position: absolute; ">
+							<img src="images/6_u178.png" class="aiCons" style="left: 40rem;" />
+							<div class="oSpans" style="position: absolute; top: 420rem; left: 18rem;">
 								<h2>行业沉淀</h2>
 								<p>多年宠物行业积淀，有着丰富的经营经验和运营管理人才。</p>
 							</div>
 						</div>
 						<div>
-							<img src="images/1_u152.png"/ style="top: 174px; left: 163px; position: absolute;">
-							<img src="images/1_u154.png" class="aiCons" style="position:absolute; left: 220px;" />
-							<div class="oSpans" style="position: absolute; top: 420px; left: 177px;">
+							<img src="images/1_u152.png"/ style="top: 174rem; left: 163rem; position: absolute;">
+							<img src="images/1_u154.png" class="aiCons" style="position:absolute; left: 220rem;" />
+							<div class="oSpans" style="position: absolute; top: 420rem; left: 177rem;">
 								<h2>020模式</h2>
 								<p>互联网时代，线上线下相结合双线创收，客户不流失。</p>
 							</div>
 						</div>
 						<div>
-							<img src="images/2_u150.png" style="top: 237px; left: 327px; position: absolute;" />
-							<img src="images/2_u156.png" class="aiCons" style="left: 370px;" />
-							<div class="oSpans" style="position: absolute; top: 420px; left: 340px;">
+							<img src="images/2_u150.png" style="top: 237rem; left: 327rem; position: absolute;" />
+							<img src="images/2_u156.png" class="aiCons" style="left: 370rem;" />
+							<div class="oSpans" style="position: absolute; top: 420rem; left: 340rem;">
 								<h2>品牌口碑</h2>
 								<p>总部营销团队时刻为合作商做店铺宣传，树立良好口碑。</p>
 							</div>
 						</div>
 						<div>
-							<img src="images/3_u148.png" style="top: 290px; left: 488px; position: absolute;" />
-							<img src="images/3_u160.png" class="aiCons" style="left: 540px;" />
-							<div class="oSpans" style="position: absolute; top: 420px; left: 500px;">
+							<img src="images/3_u148.png" style="top: 290rem; left: 488rem; position: absolute;" />
+							<img src="images/3_u160.png" class="aiCons" style="left: 540rem;" />
+							<div class="oSpans" style="position: absolute; top: 420rem; left: 500rem;">
 								<h2>服务延展</h2>
 								<p>先后开发宠物美容店、宠物培训等项目，今后还会继续丰富。</p>
 							</div>
 						</div>
 						<div>
-							<img src="images/4_u146.png" style="top: 335px; left: 650px; position: absolute;" />
-							<img src="images/4_u158.png" class="aiCons" style="left: 690px;" />
-							<div class="oSpans" style="position: absolute; top: 420px; left: 660px;">
+							<img src="images/4_u146.png" style="top: 335rem; left: 650rem; position: absolute;" />
+							<img src="images/4_u158.png" class="aiCons" style="left: 690rem;" />
+							<div class="oSpans" style="position: absolute; top: 420rem; left: 660rem;">
 								<h2>落地辅助</h2>
 								<p>开业准备期间，公司总部会协助办理加盟店各类所需证件。</p>
 							</div>
 						</div>
 						<div>
-							<img src="images/5_u144.png" style="top: 375px; left: 813px; position: absolute;" />
-							<img src="images/5_u164.png" class="aiCons" style="left: 840px;" />
-							<div class="oSpans" style="position: absolute; top: 420px; left: 830px;">
+							<img src="images/5_u144.png" style="top: 375rem; left: 813rem; position: absolute;" />
+							<img src="images/5_u164.png" class="aiCons" style="left: 840rem;" />
+							<div class="oSpans" style="position: absolute; top: 420rem; left: 830rem;">
 								<h2>全程帮扶</h2>
 								<p>从选址开业到营业策划，公司总部全程安排人员协助。</p>
 							</div>
@@ -401,8 +405,8 @@
 					<div id="div7-1">
 						<div id="div7-1-1">
 							<p>客服热线</p>
-							<div><img src="images/u209.png" style="width: 25px;padding: 5px;" />
-								<h2 style="float: right;margin-right: 220px;">400-888-888</h2>
+							<div><img src="images/u209.png" style="width: 25rem;padding: 5rem;" />
+								<h2 style="float: right;margin-right: 220rem;">400-888-888</h2>
 							</div>
 							<p>周一至周日 09:00-22:00</p>
 							<p>地址：长沙市雨花区</p>
